@@ -1,4 +1,4 @@
-VERSION=1.2.0
+VERSION=1.3.0
 DATE=$(shell DATE)
 BOOTSTRAP = ./dist/css/bootstrap-1.3.0.css
 BOOTSTRAP_LESS = ./less/bootstrap.less
