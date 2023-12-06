@@ -1,0 +1,24 @@
+//
+// Layouts.
+// Layouts de largura fixa e fluidos (com barra lateral).
+//
+
+//
+// Container (layouts centralizados e de largura fixa).
+//
+.container
+{
+    .container-fixed();
+}
+
+//
+// Layouts fluidos (alinhamento à esquerda, com barra lateral,
+// conteúdo de largura mínima e máxima).
+//
+.container-fluid
+{
+    padding-left: @gridGutterWidth;
+    padding-right: @gridGutterWidth;
+
+    .clearfix();
+}

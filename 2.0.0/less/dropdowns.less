@@ -1,0 +1,183 @@
+//
+// DROPDOWN MENUS.
+//
+
+//
+// Use a classe .menu em qualquer elemento <li> na topbar
+// ou ul.tabs e você obterá alguns menus suspensos super
+// sofisticados.
+//
+.dropdown
+{
+    position: relative;
+}
+
+.dropdown-toggle
+{
+    //
+    // O cursor torna a alternância um pouco alta no IE7.
+    //
+}
+
+.dropdown-toggle:active,
+.open .dropdown-toggle
+{
+    outline: 0;
+}
+
+//
+// Dropdown arrow/caret.
+//
+.caret
+{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    text-indent: -99999px;
+    vertical-align: top;
+    border-left:  4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top:   4px solid @black;
+    opacity: 0.3;
+    content: "\2193";
+}
+
+.dropdown .caret
+{
+    margin-top: 8px;
+    margin-left: 2px;
+}
+
+.dropdown:hover .caret,
+.open.dropdown .caret
+{
+    opacity: 1;
+}
+
+//
+// O menu dropdown (ul).
+//
+.dropdown-menu
+{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: @zindexDropdown;
+    float: left;
+
+    //
+    // Nenhum por padrão, mas bloqueia "abrir" do menu.
+    //
+    display: none;
+
+    min-width: 160px;
+    max-width: 220px;
+    width: auto;
+    padding: 4px 0;
+
+    //
+    // Substituir ul padrão.
+    //
+    margin: 0;
+
+    list-style: none;
+    background-color: @white;
+    border-color: #ccc;
+    border-color: rgba(0,0,0,.2);
+    border-style: solid;
+    border-width: 1px;
+
+    -webkit-border-radius: 0 0 5px 5px;
+       -moz-border-radius: 0 0 5px 5px;
+            border-radius: 0 0 5px 5px;
+
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+    -webkit-background-clip: padding-box;
+       -moz-background-clip: padding;
+            background-clip: padding-box;
+
+    //
+    // Permitir que os menus suspensos vão de baixo
+    // para cima (aka, dropup-menu).
+    //
+    &.bottom-up
+    {
+        top: auto;
+        bottom: 100%;
+        margin-bottom: 2px;
+    }
+
+    //
+    // Divisores (basicamente uma hora) no dropdown.
+    //
+    .divider
+    {
+        height: 1px;
+        margin: 5px 1px;
+        overflow: hidden;
+        background-color: #e5e5e5;
+        border-bottom: 1px solid @white;
+    }
+
+    //
+    // Links dentro do dropdown menu.
+    //
+    a
+    {
+        display: block;
+        padding: 3px 15px;
+        clear: both;
+        font-weight: normal;
+        line-height: 18px;
+        color: @gray;
+        white-space: nowrap;
+    }
+}
+
+//
+// Status Hover.
+//
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover
+{
+    color: @white;
+    text-decoration: none;
+    background-color: @linkColor;
+}
+
+//
+// Estado aberto para o dropdown.
+//
+.dropdown.open
+{
+    .dropdown-toggle
+    {
+        color: @white;
+        background: #ccc;
+        background: rgba(0,0,0,.3);
+    }
+
+    .dropdown-menu
+    {
+        display: block;
+    }
+}
+
+//
+// Typeahead.
+//
+.typeahead
+{
+    //
+    // Dê-lhe algum espaço para respirar.
+    //
+    margin-top: 2px;
+
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}

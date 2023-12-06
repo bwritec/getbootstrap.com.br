@@ -1,0 +1,99 @@
+/**
+ * Copyright (C) <ano>  Chifrudo <chifrudo@localhost.com.br>
+ *
+ * Este programa é um software livre: você pode redistribuí-lo e/ou
+ * modificá-lo sob os termos da GNU General Public License conforme
+ * publicada por a Free Software Foundation, seja a versão 3 da
+ * Licença, ou (a seu critério) qualquer versão posterior.
+ *
+ * Este programa é distribuído na esperança de que seja útil,
+ * mas SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de
+ * COMERCIABILIDADE ou ADEQUAÇÃO PARA UM FIM ESPECÍFICO. Veja a
+ * Licença Pública Geral GNU para mais detalhes.
+ *
+ * Você deve ter recebido uma cópia da GNU General Public License
+ * juntamente com este programa. Caso contrário, consulte
+ * <https://www.gnu.org/licenses/>.
+ */
+
+
+.com
+{
+    color: #93a1a1;
+}
+
+.lit
+{
+    color: #195f91;
+}
+
+.pun,
+.opn,
+.clo
+{
+    color: #93a1a1;
+}
+
+.fun
+{
+    color: #dc322f;
+}
+
+.str,
+.atv
+{
+    color: #D14;
+}
+
+.kwd,
+.linenums .tag
+{
+    color: #1e347b;
+}
+
+.typ,
+.atn,
+.dec,
+.var
+{
+    color: teal;
+}
+
+.pln
+{
+    color: #48484c;
+}
+
+.prettyprint
+{
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    padding: 8px;
+}
+
+.prettyprint.linenums
+{
+    -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+       -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+            box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+}
+
+/**
+ * Especificamos class=linenums em um pre para obter
+ * a numeração das linhas.
+ */
+ol.linenums
+{
+    /**
+     * IE recua via margin-left.
+     */
+    margin: 0 0 0 33px;
+}
+
+ol.linenums li
+{
+    text-shadow: 0 1px 0 #fff;
+    padding-left: 12px;
+    line-height: 18px;
+    color: #bebec5;
+}

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <!--
+      - Copyright (C) <ano>  Chifrudo <chifrudo@localhost.com.br>
+      -
+      - Este programa é um software livre: você pode redistribuí-lo e/ou
+      - modificá-lo sob os termos da GNU General Public License conforme
+      - publicada por a Free Software Foundation, seja a versão 3 da
+      - Licença, ou (a seu critério) qualquer versão posterior.
+      -
+      - Este programa é distribuído na esperança de que seja útil,
+      - mas SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de
+      - COMERCIABILIDADE ou ADEQUAÇÃO PARA UM FIM ESPECÍFICO. Veja a
+      - Licença Pública Geral GNU para mais detalhes.
+      -
+      - Você deve ter recebido uma cópia da GNU General Public License
+      - juntamente com este programa. Caso contrário, consulte
+      - <https://www.gnu.org/licenses/>.
+     -->
+
+    <!--
+      - Charset.
+     -->
+    <meta charset="utf-8">
+
+    <!--
+      - Viewport.
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+      - Favicon.
+     -->
+    <link rel="icon" href="assets/ico/favicon.ico" type="image/x-icon">
+
+    <!--
+      - Título.
+     -->
+    <title>Bootstrap</title>
+
+    <!--
+      - HTML5 shim, para suporte IE6-8 de elementos HTML.
+     -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv-3.7.3.js"></script>
+    <![endif]-->
+
+    <!--
+      - Estilos.
+     -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/docs.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/google-code-prettify/prettify.css">
+
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+    <!--
+      - Navbar.
+     -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <a class="brand" href="./index.html">
+                    Bootstrap
+                </a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="./index.html">
+                                Visão geral
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./scaffolding.html">
+                                Scaffolding
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./base-css.html">
+                                CSS básico
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./components.html">
+                                Componentes
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./javascript.html">
+                                Plugins Javascript
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./less.html">
+                                Usando LESS
+                            </a>
+                        </li>
+
+                        <li class="divider-vertical"></li>
+
+                        <li class="">
+                            <a href="./download.html">
+                                Customizar
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./examples.html">
+                                Exemplos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!--
+          - Título.
+         -->
+        <header class="jumbotron masthead">
+            <div class="inner">
+                <h1>
+                    Bootstrap
+                </h1>
+
+                <p>
+                    HTML, CSS e Javascript simples e flexíveis para componentes
+                    e interações populares da interface do usuário.
+                </p>
+
+                <p class="download-info">
+                    <a href="https://git.com.br/bootstrap.com.br" class="btn btn-primary btn-large">
+                        Veja o projeto no Git
+                    </a>
+
+                    <a href="https://github.com/twbs/bootstrap/raw/v2.0.0/docs/assets/bootstrap.zip" class="btn btn-large">
+                        Baixar Bootstrap
+                    </a>
+                </p>
+            </div>
+
+            <ul class="quick-links">
+                <li>
+                    <a href="./upgrading.html">
+                        Atualizando de 1.4
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/bwritec/getbootstrap.com.br/issues?state=open">
+                        Problemas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/bwritec/getbootstrap.com.br/wiki/Roadmap">
+                        Roadmap
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/bwritec/getbootstrap.com.br/wiki/Changelog">
+                        Changelog
+                    </a>
+                </li>
+
+                <li class="divider">&middot;</li>
+                <li>
+                    <iframe class="github-btn" src="./iframes/github-btn.html" allowtransparency="true" frameborder="0" scrolling="0" width="114px" height="20px"></iframe>
+                </li>
+
+                <li>
+                    <iframe class="github-btn" src="./iframes/github-btn-fork.html" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+                </li>
+
+                <li class="divider">&middot;</li>
+                <li>
+                    <a href="https://getbootstrap.com.br/2.0.0">
+                        Seguir @getbootstrap
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://getbootstrap.com.br/2.0.0" class="btn btn-info">
+                        <svg
+                            fill="#ffffff"
+                            height="12px"
+                            width="12px"
+                            version="1.1"
+                            id="Layer_1"
+                            style="margin-bottom: -2px; margin-right: 2px;"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 310 310"
+                            xml:space="preserve">
+                            <g id="XMLID_826_">
+                                <path
+                                    id="XMLID_827_"
+                                    d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73 c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783 c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598 C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467 c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977 c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889 c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597 c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961 c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895 c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367 c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998 C307.394,57.037,305.009,56.486,302.973,57.388z" />
+                            </g>
+                        </svg>
+
+                        Tweet
+                    </a>
+                </li>
+            </ul>
+        </header>
+
+        <hr class="soften">
+
+        <div class="marketing">
+            <h1>
+                Projetado para todos, em qualquer lugar.
+            </h1>
+
+            <p class="marketing-byline">
+                Precisa de motivos para amar o Bootstrap ? Não procure mais.
+            </p>
+
+            <div class="row">
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/glyphicons/glyphicons_042_group.png">
+
+                    <h2>
+                        Construído para e por pessoas
+                    </h2>
+
+                    <p>
+                        Assim como você, adoramos criar produtos incríveis
+                        na web. Amamos tanto isso que decidimos ajudar pessoas
+                        como nós a fazer isso de maneira mais fácil, melhor e
+                        mais rápida. Bootstrap foi criado para você.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/glyphicons/glyphicons_079_podium.png">
+
+                    <h2>
+                        Para todos os níveis de habilidade
+                    </h2>
+
+                    <p>
+                        Bootstrap foi projetado para ajudar pessoas de todos
+                        os níveis de habilidade - designer ou desenvolvedor,
+                        avançado ou iniciante. Use-o como um kit completo ou
+                        para iniciar algo mais complexo.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/glyphicons/glyphicons_163_iphone.png">
+
+                    <h2>
+                        Cross-everything
+                    </h2>
+
+                    <p>
+                        Originalmente desenvolvido pensando apenas nos
+                        navegadores modernos, o Bootstrap evoluiu para incluir
+                        suporte para todos os principais navegadores (até mesmo
+                        o IE7!) E, com o Bootstrap 2, também para tablets e
+                        smartphones.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/glyphicons/glyphicons_155_show_thumbnails.png">
+
+                    <h2>
+                        Régua de 12 colunas
+                    </h2>
+
+                    <p>
+                        Os sistemas de régua não são tudo, mas ter um sistema
+                        durável e flexível no centro do seu trabalho pode
+                        tornar o desenvolvimento muito mais simples. Use
+                        nossas classes de régua integradas ou crie a sua
+                        própria.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/glyphicons/glyphicons_214_resize_small.png">
+
+                    <h2>
+                        Design responsivo
+                    </h2>
+
+                    <p>
+                        Com o Bootstrap 2, nos tornamos totalmente responsivos.
+                        Nossos componentes são dimensionados de acordo com uma
+                        variedade de resoluções e dispositivos para fornecer
+                        uma experiência consistente, não importa o que aconteça.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/glyphicons/glyphicons_266_book_open.png">
+
+                    <h2>
+                        Documentos do guia de estilo
+                    </h2>
+
+                    <p>
+                        Ao contrário de outros kits de ferramentas front-end,
+                        o Bootstrap foi projetado principalmente como um guia
+                        de estilo para documentar não apenas nossos recursos,
+                        mas também práticas recomendadas e exemplos codificados.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/glyphicons/glyphicons_082_roundabout.png">
+
+                    <h2>
+                        Biblioteca crescente
+                    </h2>
+
+                    <p>
+                        Apesar de ter apenas 10kb (gzipado), Bootstrap é um
+                        dos kits de ferramentas de front-end mais completos
+                        que existem, com dezenas de componentes totalmente
+                        funcionais prontos para serem usados.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/glyphicons/glyphicons_009_magic.png">
+
+                    <h2>
+                        Plug-ins jQuery personalizados
+                    </h2>
+
+                    <p>
+                        De que adianta um componente de design incrível sem
+                        interações fáceis de usar, adequadas e extensíveis ?
+                        Com o Bootstrap, você obtém plug-ins jQuery
+                        personalizados para dar funcionalidades aos seus
+                        projetos.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <img class="bs-icon" src="assets/img/less-small.png">
+
+                    <h2>
+                        Construído em LESS
+                    </h2>
+
+                    <p>
+                        Onde o vanilla CSS falha, LESS se destaca. Variáveis,
+                        aninhamentos, operações e mixins em LESS tornam a
+                        codificação CSS mais rápida e eficiente com sobrecarga
+                        mínima.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span3">
+                    <img class="small-bs-icon" src="assets/img/icon-html5.png">
+
+                    <h3>
+                        HTML5
+                    </h3>
+
+                    <p>
+                        Construído para suportar novos elementos e sintaxe HTML5.
+                    </p>
+                </div>
+
+                <div class="span3">
+                    <img class="small-bs-icon" src="assets/img/icon-css3.png">
+
+                    <h3>
+                        CSS3
+                    </h3>
+
+                    <p>
+                        Componentes progressivamente aprimorados para o
+                        estilo máximo.
+                    </p>
+                </div>
+
+                <div class="span3">
+                    <img class="small-bs-icon" src="assets/img/icon-github.png">
+
+                    <h3>
+                        Código aberto
+                    </h3>
+
+                    <p>
+                        Construído e mantido por desenvolvedores através de <a href="https://github.com/bwritec">GitHub</a>.
+                    </p>
+                </div>
+
+                <div class="span3">
+                    <img class="small-bs-icon" src="assets/img/icon-twitter.png">
+
+                    <h3>
+                        Feito na bwrite
+                    </h3>
+
+                    <p>
+                        Trazido a você por um 
+                        <a href="https://getbootstrap.com.br/2.0.0">engenheiro</a> e
+                        <a href="https://getbootstrap.com.br/2.0.0">designer</a>
+                        experiente.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="soften">
+
+            <h1>
+                Construído com Bootstrap.
+            </h1>
+
+            <p class="marketing-byline">
+                Para ainda mais sites criados com Bootstrap,
+                <a href="https://getbootstrap.com.br/2.0.0" rel="noopener" target="_blank">
+                    consulte esse manual
+                </a> ou <a href="./examples.html">navegue pelos exemplos</a>.
+            </p>
+
+            <ul class="thumbnails example-sites">
+                <li class="span4">
+                    <a class="thumbnail" href="https://getbootstrap.com.br/2.0.0" rel="noopener" target="_blank">
+                        <img src="assets/img/example-sites/kippt.png" alt="Kippt">
+                    </a>
+                </li>
+
+                <li class="span4">
+                    <a class="thumbnail" href="https://getbootstrap.com.br/2.0.0" rel="noopener" target="_blank">
+                        <img src="assets/img/example-sites/fleetio.png" alt="Fleetio">
+                    </a>
+                </li>
+
+                <li class="span4">
+                    <a class="thumbnail" href="https://getbootstrap.com.br/2.0.0" rel="noopener" target="_blank">
+                        <img src="assets/img/example-sites/jshint.png" alt="JS Hint">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--
+          - Footer.
+         -->
+        <footer class="footer">
+            <p class="pull-right">
+                <a href="#">
+                    De volta ao topo
+                </a>
+            </p>
+
+            <p>
+                Projetado e construído com todo o amor do mundo
+                <a href="" rel="noopener" target="_blank">@kwrite</a> por
+                <a href="" rel="noopener" target="_blank">@bwrite</a> e
+                <a href="" rel="noopener" target="_blank">@local</a>.
+            </p>
+
+            <p>
+                Código licenciado sob o
+                <a href="#" rel="noopener" target="_blank">
+                    GNU - GENERAL PUBLIC LICENSE v3
+                </a>.
+                <br>
+
+                Documentação licenciada sob
+                <a href="#" rel="noopener" target="_blank">
+                    GNU - GENERAL PUBLIC LICENSE v3
+                </a>.
+            </p>
+
+            <p>
+                Ícones de
+                <a href="https://www.glyphicons.com/">
+                    Glyphicons Free
+                </a>,
+
+                licenciado sob
+                <a href="https://creativecommons.org/licenses/by/3.0/">
+                    CC BY 3.0
+                </a>.
+            </p>
+        </footer>
+    </div>
+
+
+    <!--
+      - Scripts - Colocado no final do documento para que as
+      -           páginas carreguem mais rápido.
+     -->
+    <script type="text/javascript" src="assets/js/jquery/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-scrollspy.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-tooltip.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-button.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-carousel.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
+
+</body>
+</html>

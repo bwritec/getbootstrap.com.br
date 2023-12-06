@@ -1,0 +1,507 @@
+/**
+ * Copyright (C) <ano>  Chifrudo <chifrudo@localhost.com.br>
+ *
+ * Este programa é um software livre: você pode redistribuí-lo e/ou
+ * modificá-lo sob os termos da GNU General Public License conforme
+ * publicada por a Free Software Foundation, seja a versão 3 da
+ * Licença, ou (a seu critério) qualquer versão posterior.
+ *
+ * Este programa é distribuído na esperança de que seja útil,
+ * mas SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de
+ * COMERCIABILIDADE ou ADEQUAÇÃO PARA UM FIM ESPECÍFICO. Veja a
+ * Licença Pública Geral GNU para mais detalhes.
+ *
+ * Você deve ter recebido uma cópia da GNU General Public License
+ * juntamente com este programa. Caso contrário, consulte
+ * <https://www.gnu.org/licenses/>.
+ */
+
+//
+// Responsive.less.
+// Para telefones e tablets.
+//
+
+//
+// REPEAT VARIABLES & MIXINS.
+//
+// Obrigatório, pois compilamos o material responsivo
+// separadamente.
+//
+
+//
+// Modifique isso para cores personalizadas, tamanhos
+// de fonte, etc.
+//
+@import "variables.less";
+
+//
+//
+//
+@import "mixins.less";
+
+//
+// RESPONSIVE CLASSES.
+//
+
+//
+// Oculte-se de leitores de tela e navegadores.
+//
+.hidden
+{
+    display: none;
+    visibility: hidden;
+}
+
+//
+// UP TO LANDSCAPE PHONE.
+//
+
+@media (max-width: 480px)
+{
+    //
+    // Suavize a navegação em colapso/expansão.
+    //
+    .nav-collapse
+    {
+        //
+        // Ativar a GPU.
+        //
+        -webkit-transform: translate3d(0, 0, 0);
+           -moz-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+    }
+
+    //
+    // Bloqueie a pequena tag do título da página para
+    // facilitar a leitura.
+    //
+    .page-header h1 small
+    {
+        display: block;
+        line-height: @baseLineHeight;
+    }
+
+    //
+    // Faça com que as classes span* tenham largura total.
+    //
+    input[class*="span"],
+    select[class*="span"],
+    textarea[class*="span"],
+    .uneditable-input
+    {
+        display: block;
+        width: 100%;
+
+        /**
+         * Faça entradas pelo menos na altura do botão
+         * correspondente.
+         */
+        height: 28px;
+
+        /**
+         * Faz com que as entradas se comportem como true
+         * elementos em nível de bloco.
+         */
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+    //
+    // Mas não deixe que isso estrague as entradas pré-anexadas/anexadas.
+    //
+    .input-prepend input[class*="span"],
+    .input-append input[class*="span"]
+    {
+        width: auto;
+    }
+
+    //
+    // Atualizar checkboxes para iOS.
+    //
+    input[type="checkbox"],
+    input[type="radio"]
+    {
+        border: 1px solid #ccc;
+    }
+
+    //
+    // Remova os estilos de formulário horizontais.
+    //
+    .form-horizontal .control-group > label
+    {
+        float: none;
+        width: auto;
+        padding-top: 0;
+        text-align: left;
+    }
+
+    //
+    // Passe por todos os controles de entrada e conteúdo.
+    //
+    .form-horizontal .controls
+    {
+        margin-left: 0;
+    }
+
+    //
+    // Mova a lista de opções para baixo para alinhar
+    // com os rótulos.
+    //
+    .form-horizontal .control-list
+    {
+        //
+        // tem que ser preenchido porque a margem colapsa.
+        //
+        padding-top: 0;
+    }
+
+    //
+    // Mova os botões em .form-actions para alinhar com .controls.
+    //
+    .form-horizontal .form-actions
+    {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    //
+    // Modals.
+    //
+    .modal
+    {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        margin: 0;
+
+        &.fade.in
+        {
+            top: auto;
+        }
+    }
+
+    .modal-header .close
+    {
+        padding: 10px;
+        margin: -10px;
+    }
+
+    //
+    // Carousel.
+    //
+    .carousel-caption
+    {
+        position: static;
+    }
+}
+
+//
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET.
+//
+
+@media (max-width: 768px)
+{
+    //
+    // GRID & CONTAINERS.
+    //
+    // Remova a largura dos contêineres.
+    //
+    .container
+    {
+        width: auto;
+        padding: 0 20px;
+    }
+
+    //
+    // Fluid rows.
+    //
+    .row-fluid
+    {
+        width: 100%;
+    }
+
+    //
+    // Desfazer margem negativa nas linhas.
+    //
+    .row
+    {
+        margin-left: 0;
+    }
+
+    //
+    // Torne todas as colunas iguais.
+    //
+    .row > [class*="span"],
+    .row-fluid > [class*="span"]
+    {
+        float: none;
+        display: block;
+        width: auto;
+        margin: 0;
+    }
+}
+
+//
+// PORTRAIT TABLET TO DEFAULT DESKTOP.
+//
+
+@media (min-width: 768px) and (max-width: 980px)
+{
+    //
+    // Fixed grid.
+    //
+    #gridSystem > .generate(12, 42px, 20px);
+
+    //
+    // Fluid grid.
+    //
+    #fluidGridSystem > .generate(12, 5.801104972%, 2.762430939%);
+
+    //
+    // Input grid.
+    //
+    #inputGridSystem > .generate(12, 42px, 20px);
+}
+
+//
+// TABLETS AND BELOW.
+//
+@media (max-width: 980px)
+{
+    //
+    // UNFIX THE TOPBAR.
+    //
+    // Remova qualquer preenchimento do body.
+    //
+    body
+    {
+        padding-top: 0;
+    }
+
+    //
+    // Desfixe o navbar.
+    //
+    .navbar-fixed-top
+    {
+        position: static;
+        margin-bottom: @baseLineHeight;
+    }
+
+    .navbar-fixed-top .navbar-inner
+    {
+        padding: 5px;
+    }
+
+    .navbar .container
+    {
+        width: auto;
+        padding: 0;
+    }
+
+    //
+    // Conta para nome brand.
+    //
+    .navbar .brand
+    {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0 0 0 -5px;
+    }
+
+    //
+    // O colapso da navegação limpa a brand.
+    //
+    .navbar .nav-collapse
+    {
+        clear: left;
+    }
+
+    //
+    // Nível de bloco da navegação.
+    //
+    .navbar .nav
+    {
+        float: none;
+        margin: 0 0 (@baseLineHeight / 2);
+    }
+
+    .navbar .nav > li
+    {
+        float: none;
+    }
+
+    .navbar .nav > li > a
+    {
+        margin-bottom: 2px;
+    }
+
+    .navbar .nav > .divider-vertical
+    {
+        display: none;
+    }
+
+    //
+    // Links nav e dropdown na navbar.
+    //
+    .navbar .nav > li > a,
+    .navbar .dropdown-menu a
+    {
+        padding: 6px 15px;
+        font-weight: bold;
+        color: @navbarLinkColor;
+
+        -webkit-border-radius: 3px;
+           -moz-border-radius: 3px;
+                border-radius: 3px;
+    }
+
+    .navbar .dropdown-menu li + li a
+    {
+        margin-bottom: 2px;
+    }
+
+    .navbar .nav > li > a:hover,
+    .navbar .dropdown-menu a:hover
+    {
+        background-color: @navbarBackground;
+    }
+
+    //
+    // Dropdowns na navbar.
+    //
+    .navbar .dropdown-menu
+    {
+        position: static;
+        top: auto;
+        left: auto;
+        float: none;
+        display: block;
+        max-width: none;
+        margin: 0 15px;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+
+        -webkit-border-radius: 0;
+           -moz-border-radius: 0;
+                border-radius: 0;
+
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .navbar .dropdown-menu:before,
+    .navbar .dropdown-menu:after
+    {
+        display: none;
+    }
+
+    .navbar .dropdown-menu .divider
+    {
+        display: none;
+    }
+
+    //
+    // Forms na navbar.
+    //
+    .navbar-form,
+    .navbar-search
+    {
+        float: none;
+        padding: (@baseLineHeight / 2) 15px;
+        margin: (@baseLineHeight / 2) 0;
+        border-top: 1px solid @navbarBackground;
+        border-bottom: 1px solid @navbarBackground;
+
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+           -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    //
+    // Extraia o conteúdo de navegação direito (secundário).
+    //
+    .navbar .nav.pull-right
+    {
+        float: none;
+        margin-left: 0;
+    }
+
+    //
+    // Static navbar.
+    //
+    .navbar-static .navbar-inner
+    {
+        padding-left:  10px;
+        padding-right: 10px;
+    }
+
+    //
+    // Navbar button.
+    //
+    .btn-navbar
+    {
+        display: block;
+    }
+
+    //
+    // Oculte tudo na barra de navegação, salve .brand
+    // e botão de alternância.
+    //
+    .nav-collapse
+    {
+        overflow: hidden;
+        height: 0;
+    }
+}
+
+//
+// DEFAULT DESKTOP.
+//
+
+@media (min-width: 980px)
+{
+    .nav-collapse.collapse
+    {
+        height: auto !important;
+    }
+}
+
+//
+// LARGE DESKTOP & UP.
+//
+
+@media (min-width: 1200px)
+{
+    //
+    // Fixed grid.
+    //
+    #gridSystem > .generate(12, 70px, 30px);
+
+    //
+    // Fluid grid.
+    //
+    #fluidGridSystem > .generate(12, 5.982905983%, 2.564102564%);
+
+    //
+    // Input grid.
+    //
+    #inputGridSystem > .generate(12, 70px, 30px);
+
+    //
+    // Thumbnails.
+    //
+    .thumbnails
+    {
+        margin-left: -30px;
+    }
+
+    .thumbnails > li
+    {
+        margin-left: 30px;
+    }
+}

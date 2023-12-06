@@ -1,0 +1,897 @@
+//
+// Mixins.less.
+// Trechos de CSS reutilizáveis para desenvolver mais
+// rapidamente e manter o código legível.
+//
+
+//
+// UTILITY MIXINS.
+//
+
+//
+// Clearfix.
+//
+// Para limpar floats corretamente.
+//
+.clearfix()
+{
+    zoom: 1;
+
+    &:before,
+    &:after
+    {
+        display: table;
+        content: "";
+    }
+
+    &:after
+    {
+        clear: both;
+    }
+}
+
+//
+// Webkit-style focus.
+//
+.tab-focus()
+{
+    //
+    // Default.
+    //
+    outline: thin dotted;
+
+    //
+    // Webkit.
+    //
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+//
+// Alinhe centralmente um elemento de nível de bloco.
+//
+.center-block()
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//
+// IE7 inline-block.
+//
+.ie7-inline-block()
+{
+}
+
+//
+// O IE7 gosta de recolher os espaços em branco em ambos
+// os lados dos elementos do bloco embutido. Ems porque
+// estamos tentando corresponder à largura de um caractere
+// de espaço. A versão esquerda é para botões de formulário,
+// que normalmente vêm depois de outros elementos, e a
+// versão direita é para ícones, que vêm antes. Aplicar
+// ambos está ok, mas significa que o espaço entre esses
+// elementos será .6em (~2 caracteres de espaço) no IE7,
+// em vez de 1 espaço em outros navegadores.
+//
+.ie7-restore-left-whitespace()
+{
+    &:first-child
+    {
+    }
+}
+
+.ie7-restore-right-whitespace()
+{
+    &:last-child
+    {
+    }
+}
+
+//
+// Sizing shortcuts.
+//
+.size(@height: 5px, @width: 5px)
+{
+    width: @width;
+    height: @height;
+}
+
+.square(@size: 5px)
+{
+    .size(@size, @size);
+}
+
+//
+// Placeholder text.
+//
+.placeholder(@color: @placeholderText)
+{
+    :-moz-placeholder
+    {
+        color: @color;
+    }
+
+    ::-webkit-input-placeholder
+    {
+        color: @color;
+    }
+}
+
+//
+// FONTS.
+//
+
+#font
+{
+    #family
+    {
+        .serif()
+        {
+            font-family: Georgia, "Times New Roman", Times, serif;
+        }
+
+        .sans-serif()
+        {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        .monospace()
+        {
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+    }
+
+    .shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight)
+    {
+        font-size: @size;
+        font-weight: @weight;
+        line-height: @lineHeight;
+    }
+
+    .serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight)
+    {
+        #font > #family > .serif;
+        #font > .shorthand(@size, @weight, @lineHeight);
+    }
+
+    .sans-serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight)
+    {
+        #font > #family > .sans-serif;
+        #font > .shorthand(@size, @weight, @lineHeight);
+    }
+
+    .monospace(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight)
+    {
+        #font > #family > .monospace;
+        #font > .shorthand(@size, @weight, @lineHeight);
+    }
+}
+
+//
+// GRID SYSTEM.
+//
+
+//
+// Site container.
+//
+.container-fixed()
+{
+    width: @gridRowWidth;
+    margin-left: auto;
+    margin-right: auto;
+
+    .clearfix();
+}
+
+//
+// Sistema de régua.
+//
+#gridSystem
+{
+    //
+    // Configure os mixins a serem usados.
+    //
+    .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, @columns)
+    {
+        width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+    }
+
+    .offset(@gridColumnWidth, @gridGutterWidth, @columns)
+    {
+        margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1)) + (@gridGutterWidth * 2);
+    }
+
+    .gridColumn(@gridGutterWidth)
+    {
+        float: left;
+        margin-left: @gridGutterWidth;
+    }
+
+    //
+    // Pegue esses valores e mixins e faça-os fazer o que querem.
+    //
+    .generate(@gridColumns, @gridColumnWidth, @gridGutterWidth)
+    {
+        //
+        // A linha circunda as colunas.
+        //
+        .row
+        {
+            margin-left: @gridGutterWidth * -1;
+
+            .clearfix();
+        }
+
+        //
+        // Encontre todas as classes .span# dentro de .row
+        // e forneça a elas as propriedades necessárias para
+        // colunas de régua (suportadas por todos os navegadores
+        // até o IE7, obrigado @dhg).
+        //
+        [class*="span"]
+        {
+            #gridSystem > .gridColumn(@gridGutterWidth);
+        }
+
+        //
+        // Default columns.
+        //
+        .span1
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 1);
+        }
+
+        .span2
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 2);
+        }
+
+        .span3
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 3);
+        }
+
+        .span4
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 4);
+        }
+
+        .span5
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 5);
+        }
+
+        .span6
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 6);
+        }
+
+        .span7
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 7);
+        }
+
+        .span8
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 8);
+        }
+
+        .span9
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 9);
+        }
+
+        .span10
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 10);
+        }
+
+        .span11
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 11);
+        }
+
+        .span12,
+        .container
+        {
+            #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 12);
+        }
+
+        //
+        // Offset column options.
+        //
+        .offset1
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 1);
+        }
+
+        .offset2
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 2);
+        }
+
+        .offset3
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 3);
+        }
+
+        .offset4
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 4);
+        }
+
+        .offset5
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 5);
+        }
+
+        .offset6
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 6);
+        }
+
+        .offset7
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 7);
+        }
+
+        .offset8
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 8);
+        }
+
+        .offset9
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 9);
+        }
+
+        .offset10
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 10);
+        }
+
+        .offset11
+        {
+            #gridSystem > .offset(@gridColumnWidth, @gridGutterWidth, 11);
+        }
+    }
+}
+
+//
+// Fluid grid system.
+//
+#fluidGridSystem
+{
+    //
+    // Configure os mixins a serem usados.
+    //
+    .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, @columns)
+    {
+        width: 1% * (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
+    }
+
+    .gridColumn(@fluidGridGutterWidth)
+    {
+        float: left;
+        margin-left: @fluidGridGutterWidth;
+    }
+
+    //
+    // Pegue esses valores e mixins e faça-os fazer o que querem.
+    //
+    .generate(@gridColumns, @fluidGridColumnWidth, @fluidGridGutterWidth)
+    {
+        //
+        // A linha circunda as colunas.
+        //
+        .row-fluid
+        {
+            width: 100%;
+
+            .clearfix();
+
+            //
+            // Encontre todas as classes .span# dentro de .row e
+            // forneça a elas as propriedades necessárias para
+            // colunas de réguas (suportadas por todos os
+            // navegadores até o IE7).
+            //
+            > [class*="span"]
+            {
+                #fluidGridSystem > .gridColumn(@fluidGridGutterWidth);
+            }
+
+            > [class*="span"]:first-child
+            {
+                margin-left: 0;
+            }
+
+            //
+            // Colunas padrão.
+            //
+            .span1
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 1);
+            }
+
+            .span2
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 2);
+            }
+
+            .span3
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 3);
+            }
+
+            .span4
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 4);
+            }
+
+            .span5
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 5);
+            }
+
+            .span6
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 6);
+            }
+
+            .span7
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 7);
+            }
+
+            .span8
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 8);
+            }
+
+            .span9
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 9);
+            }
+
+            .span10
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 10);
+            }
+
+            .span11
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 11);
+            }
+
+            .span12
+            {
+                #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 12);
+            }
+        }
+    }
+}
+
+//
+// Input grid system.
+//
+#inputGridSystem
+{
+    .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, @columns)
+    {
+        width: ((@gridColumnWidth) * @columns) + (@gridGutterWidth * (@columns - 1)) - 10;
+    }
+
+    .generate(@gridColumns, @gridColumnWidth, @gridGutterWidth)
+    {
+        input,
+        textarea,
+        .uneditable-input
+        {
+            &.span1
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 1);
+            }
+
+            &.span2
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 2);
+            }
+
+            &.span3
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 3);
+            }
+
+            &.span4
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 4);
+            }
+
+            &.span5
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 5);
+            }
+
+            &.span6
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 6);
+            }
+
+            &.span7
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 7);
+            }
+
+            &.span8
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 8);
+            }
+
+            &.span9
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 9);
+            }
+
+            &.span10
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 10);
+            }
+
+            &.span11
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 11);
+            }
+
+            &.span12
+            {
+                #inputGridSystem > .inputColumns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 12);
+            }
+        }
+    }
+}
+
+//
+// CSS3 PROPERTIES.
+//
+
+//
+// Border Radius.
+//
+.border-radius(@radius: 5px)
+{
+    -webkit-border-radius: @radius;
+       -moz-border-radius: @radius;
+            border-radius: @radius;
+}
+
+//
+// Drop shadows.
+//
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25))
+{
+    -webkit-box-shadow: @shadow;
+       -moz-box-shadow: @shadow;
+            box-shadow: @shadow;
+}
+
+//
+// Transitions.
+//
+.transition(@transition)
+{
+    -webkit-transition: @transition;
+       -moz-transition: @transition;
+            transition: @transition;
+}
+
+//
+// Transformations.
+//
+.rotate(@degrees)
+{
+    -webkit-transform: rotate(@degrees);
+       -moz-transform: rotate(@degrees);
+            transform: rotate(@degrees);
+}
+
+.scale(@ratio)
+{
+    -webkit-transform: scale(@ratio);
+       -moz-transform: scale(@ratio);
+            transform: scale(@ratio);
+}
+
+.translate(@x: 0, @y: 0)
+{
+    -webkit-transform: translate(@x, @y);
+       -moz-transform: translate(@x, @y);
+            transform: translate(@x, @y);
+}
+
+.skew(@x: 0, @y: 0)
+{
+    -webkit-transform: translate(@x, @y);
+       -moz-transform: translate(@x, @y);
+            transform: translate(@x, @y);
+}
+
+.skew(@x: 0, @y: 0)
+{
+    -webkit-transform: skew(@x, @y);
+       -moz-transform: skew(@x, @y);
+            transform: skew(@x, @y);
+}
+
+//
+// Background clipping.
+// Atenção: FF 3.6 e anteriores precisam de "padding"
+// em vez de "padding-box".
+//
+.background-clip(@clip)
+{
+    -webkit-background-clip: @clip;
+       -moz-background-clip: @clip;
+            background-clip: @clip;
+}
+
+//
+// Background sizing.
+//
+.background-size(@size)
+{
+    -webkit-background-size: @size;
+       -moz-background-size: @size;
+            background-size: @size;
+}
+
+//
+// Box sizing.
+//
+.box-sizing(@boxmodel)
+{
+    -webkit-box-sizing: @boxmodel;
+       -moz-box-sizing: @boxmodel;
+            box-sizing: @boxmodel;
+}
+
+//
+// User select.
+// Para selecionar texto na página.
+//
+.user-select(@select)
+{
+    -webkit-user-select: @select;
+       -moz-user-select: @select;
+            user-select: @select;
+}
+
+//
+// Resize anything.
+//
+.resizable(@direction: both)
+{
+    //
+    // Opções: horizontal, vertical, ambos.
+    //
+    resize: @direction;
+
+    //
+    // Correção Safari.
+    //
+    overflow: auto;
+}
+
+//
+// CSS3 Content Columns.
+//
+.content-columns(@columnCount, @columnGap: @gridColumnGutter)
+{
+    -webkit-column-count: @columnCount;
+       -moz-column-count: @columnCount;
+            column-count: @columnCount;
+
+    -webkit-column-gap: @columnGap;
+       -moz-column-gap: @columnGap;
+            column-gap: @columnGap;
+}
+
+//
+// Opacidade.
+//
+.opacity(@opacity: 100)
+{
+    opacity: @opacity / 100;
+}
+
+//
+// BACKGROUNDS.
+//
+
+//
+// Adicione um valor de transparência alfa a qualquer cor
+// de fundo ou borda.
+//
+#translucent
+{
+    .background(@color: @white, @alpha: 1)
+    {
+        background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+    }
+
+    .border(@color: @white, @alpha: 1)
+    {
+        border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+
+        .background-clip(padding-box);
+    }
+}
+
+//
+// Cores da barra gradiente para botões e alertas.
+//
+.gradientBar(@primaryColor, @secondaryColor)
+{
+    #gradient > .vertical(@primaryColor, @secondaryColor);
+
+    border-color: @secondaryColor @secondaryColor darken(@secondaryColor, 15%);
+    border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
+}
+
+//
+// Gradientes.
+//
+#gradient
+{
+    .horizontal(@startColor: #555, @endColor: #333)
+    {
+        background-color: @endColor;
+        background-repeat: repeat-x;
+        background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+        background-image:    -moz-linear-gradient(left, @startColor, @endColor);
+        background-image:         linear-gradient(left, @startColor, @endColor);
+    }
+
+    .vertical(@startColor: #555, @endColor: #333)
+    {
+        background-color: mix(@startColor, @endColor, 60%);
+        background-repeat: repeat-x;
+        background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+        background-image:    -moz-linear-gradient(top, @startColor, @endColor);
+        background-image:         linear-gradient(top, @startColor, @endColor);
+    }
+
+    .directional(@startColor: #555, @endColor: #333, @deg: 45deg)
+    {
+        background-color: @endColor;
+        background-repeat: repeat-x;
+        background-image: -webkit-linear-gradient(@deg, @startColor, @endColor);
+        background-image:    -moz-linear-gradient(@deg, @startColor, @endColor);
+        background-image:         linear-gradient(@deg, @startColor, @endColor);
+    }
+
+    .vertical-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f)
+    {
+        background-color: mix(@midColor, @endColor, 80%);
+        background-repeat: no-repeat;
+        background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+        background-image:    -moz-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+        background-image:         linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    }
+
+    .radial(@innerColor: #555, @outerColor: #333)
+    {
+        background-color: @outerColor;
+        background-repeat: no-repeat;
+        background-image: -webkit-radial-gradient(circle, @innerColor, @outerColor);
+        background-image:    -moz-radial-gradient(circle, @innerColor, @outerColor);
+        background-image:         radial-gradient(circle, @innerColor, @outerColor);
+    }
+
+    .striped(@color, @angle: -45deg)
+    {
+        background-color: @color;
+        background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+        background-image:    -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    }
+}
+
+//
+// Redefinir filtros para IE.
+//
+.reset-filter()
+{
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+//
+// Mixin para gerar fundos de botões.
+//
+.buttonBackground(@startColor, @endColor)
+{
+    //
+    // gradientBar definirá o plano de fundo com uma
+    // mistura agradável destes, para oferecer suporte
+    // ao IE <= 9.
+    //
+    .gradientBar(@startColor, @endColor);
+    .reset-filter();
+
+    //
+    // Nesses casos, o gradiente não cobrirá o fundo, então substituímos.
+    //
+    &:hover,
+    &:active,
+    &.active,
+    &.disabled,
+    &[disabled]
+    {
+        background-color: @endColor;
+    }
+
+    //
+    // O IE 7 + 8 não consegue lidar com box-shadow
+    // para mostrar ativo, então nós mesmos escurecemos
+    // um pouco.
+    //
+    &:active,
+    &.active
+    {
+        background-color: darken(@endColor, 10%) e("\9");
+    }
+}
+
+//
+// COMPONENT MIXINS.
+//
+
+//
+// POPOVER ARROWS.
+//
+// Para embriagados e popovers.
+//
+#popoverArrow
+{
+    .top(@arrowWidth: 5px)
+    {
+        bottom: 0;
+        left: 50%;
+        margin-left: -@arrowWidth;
+        border-left: @arrowWidth solid transparent;
+        border-right: @arrowWidth solid transparent;
+        border-top: @arrowWidth solid @black;
+    }
+
+    .left(@arrowWidth: 5px)
+    {
+        top: 50%;
+        right: 0;
+        margin-top: -@arrowWidth;
+        border-top: @arrowWidth solid transparent;
+        border-bottom: @arrowWidth solid transparent;
+        border-left: @arrowWidth solid @black;
+    }
+
+    .bottom(@arrowWidth: 5px)
+    {
+        top: 0;
+        left: 50%;
+        margin-left: -@arrowWidth;
+        border-left: @arrowWidth solid transparent;
+        border-right: @arrowWidth solid transparent;
+        border-bottom: @arrowWidth solid @black;
+    }
+
+    .right(@arrowWidth: 5px)
+    {
+        top: 50%;
+        left: 0;
+        margin-top: -@arrowWidth;
+        border-top: @arrowWidth solid transparent;
+        border-bottom: @arrowWidth solid transparent;
+        border-right: @arrowWidth solid @black;
+    }
+}
