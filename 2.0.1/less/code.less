@@ -1,0 +1,82 @@
+//
+// Code.less.
+// Estilos de tipografia de código para os elementos
+// <code> e <pre>.
+//
+
+//
+// Estilos de código inline e de bloco.
+//
+code,
+pre
+{
+    font-size: @baseFontSize - 1;
+    padding: 0 3px 2px;
+    color: @grayDark;
+
+    #font > #family > .monospace;
+
+    .border-radius(3px);
+}
+
+//
+// Código inline.
+//
+code
+{
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    padding: 3px 4px;
+    color: #d14;
+}
+
+//
+// Blocos de código.
+//
+pre
+{
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    padding: (@baseLineHeight - 1) / 2;
+    margin: 0 0 @baseLineHeight / 2;
+    line-height: @baseLineHeight;
+    background-color: #f5f5f5;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    font-size: 12px;
+    display: block;
+
+    .border-radius(4px);
+
+    //
+    // Torne os estilos de impressão bonitos mais espaçados
+    // para facilitar a leitura.
+    //
+    &.prettyprint
+    {
+        margin-bottom: @baseLineHeight;
+    }
+
+    //
+    // Considere algumas saídas de código que colocam tags
+    // de código em tags pre.
+    //
+    code
+    {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+        border: 0;
+    }
+}
+
+//
+// Habilite blocos de código roláveis.
+//
+.pre-scrollable
+{
+    overflow-y: scroll;
+    max-height: 340px;
+}

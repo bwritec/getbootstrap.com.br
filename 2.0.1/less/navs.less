@@ -1,0 +1,508 @@
+//
+// NAVIGATIONS.
+//
+
+//
+// BASE CLASS.
+//
+
+.nav
+{
+    margin-bottom: @baseLineHeight;
+    list-style: none;
+    margin-left: 0;
+}
+
+//
+// Faça o nível do bloco de links.
+//
+.nav > li > a
+{
+    display: block;
+}
+
+.nav > li > a:hover
+{
+    background-color: @grayLighter;
+    text-decoration: none;
+}
+
+//
+// Nav headers (para dropdowns e listas).
+//
+.nav .nav-header
+{
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    line-height: @baseLineHeight;
+    text-transform: uppercase;
+    padding: 3px 15px;
+    color: @grayLight;
+    font-weight: bold;
+    font-size: 11px;
+    display: block;
+}
+
+//
+// Espace-os quando seguirem outro item da lista (link).
+//
+.nav li + .nav-header
+{
+    margin-top: 9px;
+}
+
+//
+// NAV LIST.
+//
+
+.nav-list
+{
+    padding-right: 14px;
+    padding-left: 14px;
+    margin-bottom: 0;
+}
+
+.nav-list > li > a,
+.nav-list .nav-header
+{
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    margin-left:  -15px;
+    margin-right: -15px;
+}
+
+.nav-list > li > a
+{
+    padding: 3px 15px;
+}
+
+.nav-list .active > a,
+.nav-list .active > a:hover
+{
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    background-color: @linkColor;
+    color: @white;
+}
+
+.nav-list [class^="icon-"]
+{
+    margin-right: 2px;
+}
+
+//
+// TABS E PILLS.
+//
+
+//
+// Estilos comuns.
+//
+.nav-tabs,
+.nav-pills
+{
+    .clearfix();
+}
+
+.nav-tabs > li,
+.nav-pills > li
+{
+    float: left;
+}
+
+.nav-tabs > li > a,
+.nav-pills > li > a
+{
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: 2px;
+
+    //
+    // Mantém a altura total em um número par.
+    //
+    line-height: 14px;
+}
+
+//
+// TABS.
+//
+
+//
+// Dê às tabs algo para uma base.
+//
+.nav-tabs
+{
+    border-bottom: 1px solid #ddd;
+}
+
+//
+// Faça com que os itens da lista se sobreponham à
+// borda inferior.
+//
+.nav-tabs > li
+{
+    margin-bottom: -1px;
+}
+
+//
+// Tabs atual (como links).
+//
+.nav-tabs > li > a
+{
+    border: 1px solid transparent;
+    padding-bottom: 9px;
+    padding-top: 9px;
+
+    .border-radius(4px 4px 0 0);
+
+    &:hover
+    {
+        border-color: @grayLighter @grayLighter #ddd;
+    }
+}
+
+//
+// Status active, e os seus :hover para substituir o :hover normal.
+//
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover
+{
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    background-color: @white;
+    cursor: default;
+    color: @gray;
+}
+
+//
+// PILLS.
+//
+
+//
+// Links renderizado como pills.
+//
+.nav-pills > li > a
+{
+    padding-bottom: 8px;
+    margin-bottom: 2px;
+    padding-top: 8px;
+    margin-top: 2px;
+
+    .border-radius(5px);
+}
+
+//
+// Status active.
+//
+.nav-pills .active > a,
+.nav-pills .active > a:hover
+{
+    background-color: @linkColor;
+    color: @white;
+}
+
+//
+// STACKED NAV.
+//
+
+//
+// Stacked tabs e pills.
+//
+.nav-stacked > li
+{
+    float: none;
+}
+
+.nav-stacked > li > a
+{
+    //
+    // Não há necessidade de espaço entre os itens de navegação.
+    //
+    margin-right: 0;
+}
+
+//
+// Tabs.
+//
+.nav-tabs.nav-stacked
+{
+    border-bottom: 0;
+}
+
+.nav-tabs.nav-stacked > li > a
+{
+    border: 1px solid #ddd;
+
+    .border-radius(0);
+}
+
+.nav-tabs.nav-stacked > li:first-child > a
+{
+    .border-radius(4px 4px 0 0);
+}
+
+.nav-tabs.nav-stacked > li:last-child > a
+{
+    .border-radius(0 0 4px 4px);
+}
+
+.nav-tabs.nav-stacked > li > a:hover
+{
+    border-color: #ddd;
+    z-index: 2;
+}
+
+//
+// Pills.
+//
+.nav-pills.nav-stacked > li > a
+{
+    margin-bottom: 3px;
+}
+
+.nav-pills.nav-stacked > li:last-child > a
+{
+    //
+    // Diminuir a margem para corresponder ao tamanho das
+    // tabs empilhadas.
+    //
+    margin-bottom: 1px;
+}
+
+//
+// DROPDOWNS
+//
+
+//
+// Posicione o menu.
+//
+.nav-tabs .dropdown-menu,
+.nav-pills .dropdown-menu
+{
+    border-width: 1px;
+    margin-top: 1px;
+}
+
+.nav-pills .dropdown-menu
+{
+    .border-radius(4px);
+}
+
+//
+// Dropdown padrão de links.
+//
+// Faça os cursores usarem linkColor para começar.
+//
+.nav-tabs .dropdown-toggle .caret,
+.nav-pills .dropdown-toggle .caret
+{
+    border-top-color: @linkColor;
+    margin-top: 6px;
+}
+
+.nav-tabs .dropdown-toggle:hover .caret,
+.nav-pills .dropdown-toggle:hover .caret
+{
+    border-top-color: @linkColorHover;
+}
+
+//
+// Active dropdown links.
+//
+.nav-tabs .active .dropdown-toggle .caret,
+.nav-pills .active .dropdown-toggle .caret
+{
+    border-top-color: @grayDark;
+}
+
+//
+// Active:hover dropdown links.
+//
+.nav > .dropdown.active > a:hover
+{
+    cursor: pointer;
+    color: @black;
+}
+
+//
+// Abrir dropdowns.
+//
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > .open.active > a:hover
+{
+    background-color: @grayLight;
+    border-color: @grayLight;
+    color: @white;
+}
+
+.nav .open .caret,
+.nav .open.active .caret,
+.nav .open a:hover .caret
+{
+    border-top-color: @white;
+
+    .opacity(100);
+}
+
+//
+// Dropdowns em tabs empilhadas.
+//
+.tabs-stacked .open > a:hover
+{
+    border-color: @grayLight;
+}
+
+//
+// TABBABLE.
+//
+
+//
+// COMMON STYLES.
+//
+
+//
+// Clear todas os floats.
+//
+.tabbable
+{
+    .clearfix();
+}
+
+.tab-content
+{
+    //
+    // Impedir que o conteúdo seja executado abaixo das tabs.
+    //
+    overflow: hidden;
+}
+
+//
+// Remover borda em bottom, left, right.
+//
+.tabs-below .nav-tabs,
+.tabs-right .nav-tabs,
+.tabs-left .nav-tabs
+{
+    border-bottom: 0;
+}
+
+//
+// Mostrar/ocultar áreas de tabs.
+//
+.tab-content > .tab-pane,
+.pill-content > .pill-pane
+{
+    display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active
+{
+    display: block;
+}
+
+//
+// BOTTOM.
+//
+
+.tabs-below .nav-tabs
+{
+    border-top: 1px solid #ddd;
+}
+
+.tabs-below .nav-tabs > li
+{
+    margin-top: -1px;
+    margin-bottom: 0;
+}
+
+.tabs-below .nav-tabs > li > a
+{
+    .border-radius(0 0 4px 4px);
+
+    &:hover
+    {
+        border-bottom-color: transparent;
+        border-top-color: #ddd;
+    }
+}
+
+.tabs-below .nav-tabs .active > a,
+.tabs-below .nav-tabs .active > a:hover
+{
+    border-color: transparent #ddd #ddd #ddd;
+}
+
+//
+// LEFT & RIGHT.
+//
+
+//
+// Estilos comuns.
+//
+.tabs-left .nav-tabs > li,
+.tabs-right .nav-tabs > li
+{
+    float: none;
+}
+
+.tabs-left .nav-tabs > li > a,
+.tabs-right .nav-tabs > li > a
+{
+    margin-bottom: 3px;
+    margin-right: 0;
+    min-width: 74px;
+}
+
+//
+// Tabs à esquerda.
+//
+.tabs-left .nav-tabs
+{
+    border-right: 1px solid #ddd;
+    margin-right: 19px;
+    float: left;
+}
+
+.tabs-left .nav-tabs > li > a
+{
+    margin-right: -1px;
+
+    .border-radius(4px 0 0 4px);
+}
+
+.tabs-left .nav-tabs > li > a:hover
+{
+    border-color: @grayLighter #ddd @grayLighter @grayLighter;
+}
+
+.tabs-left .nav-tabs .active > a,
+.tabs-left .nav-tabs .active > a:hover
+{
+    border-color: #ddd transparent #ddd #ddd;
+}
+
+//
+// Tabs à direita.
+//
+.tabs-right .nav-tabs
+{
+    border-left: 1px solid #ddd;
+    margin-left: 19px;
+    float: right;
+}
+
+.tabs-right .nav-tabs > li > a
+{
+    margin-left: -1px;
+
+    .border-radius(0 4px 4px 0);
+}
+
+.tabs-right .nav-tabs > li > a:hover
+{
+    border-color: @grayLighter @grayLighter @grayLighter #ddd;
+}
+
+.tabs-right .nav-tabs .active > a,
+.tabs-right .nav-tabs .active > a:hover
+{
+    border-color: #ddd #ddd #ddd transparent;
+}

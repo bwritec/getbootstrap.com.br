@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <!--
+      - Copyright (C) <ano>  Chifrudo <chifrudo@localhost.com.br>
+      -
+      - Este programa é um software livre: você pode redistribuí-lo e/ou
+      - modificá-lo sob os termos da GNU General Public License conforme
+      - publicada por a Free Software Foundation, seja a versão 3 da
+      - Licença, ou (a seu critério) qualquer versão posterior.
+      -
+      - Este programa é distribuído na esperança de que seja útil,
+      - mas SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de
+      - COMERCIABILIDADE ou ADEQUAÇÃO PARA UM FIM ESPECÍFICO. Veja a
+      - Licença Pública Geral GNU para mais detalhes.
+      -
+      - Você deve ter recebido uma cópia da GNU General Public License
+      - juntamente com este programa. Caso contrário, consulte
+      - <https://www.gnu.org/licenses/>.
+     -->
+
+    <!--
+      - Charset.
+     -->
+    <meta charset="utf-8">
+
+    <!--
+      - Viewport.
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+      - Favicon.
+     -->
+    <link rel="icon" href="assets/ico/favicon.ico" type="image/x-icon">
+
+    <!--
+      - Título.
+     -->
+    <title>Bootstrap</title>
+
+    <!--
+      - HTML5 shim, para suporte IE6-8 de elementos HTML.
+     -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv-3.7.3.js"></script>
+    <![endif]-->
+
+    <!--
+      - Estilos.
+     -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/docs.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/google-code-prettify/prettify.css">
+
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+    <!--
+      - Navbar.
+     -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <a class="brand" href="./index.html">
+                    Bootstrap
+                </a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="">
+                            <a href="./index.html">
+                                Visão geral
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="./scaffolding.html">
+                                Scaffolding
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./base-css.html">
+                                CSS básico
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./components.html">
+                                Componentes
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./javascript.html">
+                                Plugins Javascript
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./less.html">
+                                Usando LESS
+                            </a>
+                        </li>
+
+                        <li class="divider-vertical"></li>
+
+                        <li class="">
+                            <a href="./download.html">
+                                Customizar
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./examples.html">
+                                Exemplos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!--
+          - Masthead.
+         -->
+        <header class="jumbotron subhead" id="overview">
+            <h1>
+                Scaffolding
+            </h1>
+
+            <p class="lead">
+                Bootstrap é construído em uma régua responsiva de 12
+                colunas. Também incluímos layouts de largura fixa e
+                fluida baseados nesse sistema.
+            </p>
+
+            <div class="subnav">
+                <ul class="nav nav-pills">
+                    <li>
+                        <a href="#gridSystem">
+                            Sistema de régua
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#fluidGridSystem">
+                            Sistema de régua fluida
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#gridCustomization">
+                            Personalização
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#layouts">
+                            Layouts
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#responsive">
+                            Design responsivo
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!--
+          - Sistema de régua.
+         -->
+        <section id="gridSystem">
+            <div class="page-header">
+                <h1>
+                    Sistema de régua padrão
+
+                    <small>
+                        12 colunas com um toque responsivo
+                    </small>
+                </h1>
+            </div>
+
+            <div class="row show-grid">
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="span4">
+                    4
+                </div>
+
+                <div class="span4">
+                    4
+                </div>
+
+                <div class="span4">
+                    4
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="span4">
+                    4
+                </div>
+
+                <div class="span8">
+                    8
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="span6">
+                    6
+                </div>
+
+                <div class="span6">
+                    6
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="span12">
+                    12
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span4">
+                    <p>
+                        O sistema de régua padrão fornecido como parte
+                        do Bootstrap é um <strong>940px-wide, 12-column grid</strong>.
+                    </p>
+
+                    <p>
+                        Ele também possui quatro variações responsivas para
+                        vários dispositivos e resoluções: telefone, retrato
+                        de tablet, paisagem de mesa e desktops pequenos e
+                        desktops widescreen grandes.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <pre class="prettyprint linenums">
+&lt;div class="row"&gt;
+    &lt;div class="span4"&gt;
+        ...
+    &lt;/div&gt;
+
+    &lt;div class="span8"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                </div>
+
+                <div class="span4">
+                    <p>
+                        Conforme mostrado aqui, um layout básico pode ser
+                        criado com duas “colunas”, cada uma abrangendo uma
+                        série de 12 colunas fundamentais que definimos como
+                        parte de nosso sistema de régua.
+                    </p>
+                </div>
+            </div>
+
+            <br>
+
+            <h2>
+                Colunas de deslocamento
+            </h2>
+
+            <div class="row show-grid">
+                <div class="span4">
+                    4
+                </div>
+
+                <div class="span4 offset4">
+                    4 offset 4
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="span3 offset3">
+                    3 offset 3
+                </div>
+
+                <div class="span3 offset3">
+                    3 offset 3
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="span8 offset4">
+                    8 offset 4
+                </div>
+            </div>
+
+            <pre class="prettyprint linenums">
+&lt;div class="row"&gt;
+    &lt;div class="span4"&gt;
+        ...
+    &lt;/div&gt;
+
+    &lt;div class="span4 offset4"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+            <br>
+
+            <h2>
+                Colunas de aninhamento
+            </h2>
+
+            <div class="row">
+                <div class="span6">
+                    <p>
+                        Com o sistema de régua estático (não fluido) do
+                        Bootstrap, o aninhamento é fácil. Para aninhar
+                        seu conteúdo, basta adicionar um novo <code>.row</code>
+                        e conjunto de colunas <code>.span*</code> dentro
+                        de uma coluna <code>.span*</code> existente.
+                    </p>
+
+                    <h3>
+                        Exemplo
+                    </h3>
+
+                    <p>
+                        As linhas aninhadas devem incluir um conjunto de
+                        colunas que somam o número de colunas da sua camada
+                        mais alta. Por exemplo, duas colunas aninhados
+                        <code>.span3</code> deverá ser colocado dentro
+                        de um <code>.span6</code>.
+                    </p>
+
+                    <div class="row show-grid">
+                        <div class="span6">
+                            Nível 1 da coluna
+
+                            <div class="row show-grid">
+                                <div class="span3">
+                                    Nível 2
+                                </div>
+
+                                <div class="span3">
+                                    Nível 2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span6">
+                    <pre class="prettyprint linenums">
+&lt;div class="row"&gt;
+    &lt;div class="span12"&gt;
+        Nível 1 da coluna
+
+        &lt;div class="row"&gt;
+            &lt;div class="span6"&gt;
+                Nível 2
+            &lt;/div&gt;
+
+            &lt;div class="span6"&gt;
+                Nível 2
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          - Sistema de régua fluida.
+         -->
+        <section id="fluidGridSystem">
+            <div class="page-header">
+                <h1>
+                    Sistema de régua fluida
+
+                    <small>
+                        12 colunas responsivas baseadas em porcentagem
+                    </small>
+                </h1>
+            </div>
+
+            <h2>
+                Colunas fluidas
+            </h2>
+
+            <div class="row-fluid show-grid">
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+
+                <div class="span1">
+                    1
+                </div>
+            </div>
+
+            <div class="row-fluid show-grid">
+                <div class="span4">
+                    4
+                </div>
+
+                <div class="span4">
+                    4
+                </div>
+
+                <div class="span4">
+                    4
+                </div>
+            </div>
+
+            <div class="row-fluid show-grid">
+                <div class="span4">
+                    4
+                </div>
+
+                <div class="span8">
+                    8
+                </div>
+            </div>
+
+            <div class="row-fluid show-grid">
+                <div class="span6">
+                    6
+                </div>
+
+                <div class="span6">
+                    6
+                </div>
+            </div>
+
+            <div class="row-fluid show-grid">
+                <div class="span12">
+                    12
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        Porcentagens, não pixels
+                    </h3>
+
+                    <p>
+                        O sistema de régua fluida usa porcentagens para
+                        larguras de coluna em vez de pixels fixos. Ele
+                        também possui as mesmas variações de resposta
+                        do nosso sistema de régua fixa, garantindo
+                        proporções adequadas para as principais resoluções
+                        de tela e dispositivos.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Linhas fluidas
+                    </h3>
+
+                    <p>
+                        Torne qualquer linha fluida simplesmente alterando
+                        <code>.row</code> para <code>.row-fluid</code>.
+                        As colunas permanecem exatamente as mesmas, tornando
+                        muito fácil alternar entre layouts fixos e fluidos.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Marcação
+                    </h3>
+
+                    <pre class="prettyprint linenums">
+&lt;div class="row-fluid"&gt;
+    &lt;div class="span4"&gt;
+        ...
+    &lt;/div&gt;
+
+    &lt;div class="span8"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+
+            <h2>
+                Nesting fluido
+            </h2>
+
+            <div class="row">
+                <div class="span6">
+                    <p>
+                        O aninhamento com réguas fluidas é um pouco diferente:
+                        o número de colunas aninhadas não precisa corresponder
+                        a camada mais alta. Em vez disso, suas colunas são
+                        redefinidas em cada nível porque cada linha ocupa
+                        100% da coluna da camada mais alta.
+                    </p>
+
+                    <div class="row-fluid show-grid">
+                        <div class="span12">
+                            Fluido 12
+
+                            <div class="row-fluid show-grid">
+                                <div class="span6">
+                                    Fluido 6
+                                </div>
+
+                                <div class="span6">
+                                    Fluido 6
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span6">
+                    <pre class="prettyprint linenums">
+&lt;div class="row-fluid"&gt;
+    &lt;div class="span12"&gt;
+        Nível 1 da coluna
+
+        &lt;div class="row-fluid"&gt;
+            &lt;div class="span6"&gt;
+                Nível 2
+            &lt;/div&gt;
+
+            &lt;div class="span6"&gt;
+                Nível 2
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          - Customizaton.
+         -->
+        <section id="gridCustomization">
+            <div class="page-header">
+                <h1>
+                    Personalização da régua
+                </h1>
+            </div>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Variável
+                        </th>
+
+                        <th>
+                            Valor padrão
+                        </th>
+
+                        <th>
+                            Descrição
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>@gridColumns</code>
+                        </td>
+
+                        <td>
+                            12
+                        </td>
+
+                        <td>
+                            Numero de colunas
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>@gridColumnWidth</code>
+                        </td>
+
+                        <td>
+                            60px
+                        </td>
+
+                        <td>
+                            Largura de cada coluna
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>@gridGutterWidth</code>
+                        </td>
+
+                        <td>
+                            20px
+                        </td>
+
+                        <td>
+                            Espaço negativo entre colunas
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>@siteWidth</code>
+                        </td>
+
+                        <td>
+                            <em>
+                                Soma calculada de todas as colunas e gutters
+                            </em>
+                        </td>
+
+                        <td>
+                            Conta o número de colunas e gutters para definir
+                            a largura do mixin <code>.container-fixed()</code>.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        Variáveis em LESS
+                    </h3>
+
+                    <p>
+                        Integradas ao Bootstrap estão algumas variáveis para
+                        personalizar o sistema de régua padrão de 940px,
+                        documentado acima. Todas as variáveis da régua são
+                        armazenadas em variables.less.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Como personalizar
+                    </h3>
+
+                    <p>
+                        Modificar a régua significa alterar as três variáveis
+                        <code>@grid*</code> e recompilar o Bootstrap. Altere
+                        as variáveis da régua em variables.less e use um dos
+                        <a href="less.html#compiling">quatro maneiras documentadas
+                        para recompilar</a>. Se você estiver adicionando mais
+                        colunas, certifique-se de adicionar o CSS para aquelas
+                        em grid.less.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Permanecendo responsivo
+                    </h3>
+
+                    <p>
+                        A personalização da régua funciona apenas no nível
+                        padrão, a régua de 940px. Para manter os aspectos
+                        responsivos do Bootstrap, você também terá que
+                        personalizar as réguas em responsive.less.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          - Layouts (Padrão e fluido).
+         -->
+        <section id="layouts">
+            <div class="page-header">
+                <h1>
+                    Layouts
+
+                    <small>
+                        Modelos básicos para criar páginas da web
+                    </small>
+                </h1>
+            </div>
+
+            <div class="row">
+                <div class="span6">
+                    <h2>
+                        Layout fixo
+                    </h2>
+
+                    <p>
+                        O layout centralizado padrão e simples de 940px
+                        de largura para praticamente qualquer site ou
+                        página fornecido por um único
+                        <code>&lt;div class="container"&gt;</code>.
+                    </p>
+
+                    <div class="mini-layout">
+                        <div class="mini-layout-body"></div>
+                    </div>
+
+                    <pre class="prettyprint linenums">
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/body&gt;</pre>
+                </div>
+
+                <div class="span6">
+                    <h2>
+                        Fluid layout
+                    </h2>
+
+                    <p>
+                        <code>&lt;div class="container-fluid"&gt;</code>
+                        oferece estrutura de página flexível, larguras mínima
+                        e máxima e uma barra lateral esquerda. É ótimo para
+                        aplicativos e documentos.
+                    </p>
+
+                    <div class="mini-layout fluid">
+                        <div class="mini-layout-sidebar"></div>
+                        <div class="mini-layout-body"></div>
+                    </div>
+
+                    <pre class="prettyprint linenums">
+&lt;div class="container-fluid"&gt;
+    &lt;div class="row-fluid"&gt;
+        &lt;div class="span2"&gt;
+            &lt;!--
+              - Conteúdo da sidebar.
+             --&gt;
+        &lt;/div&gt;
+
+        &lt;div class="span10"&gt;
+            &lt;!--
+              - Conteúdo do body.
+             --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          - Responsive design.
+         -->
+        <section id="responsive">
+            <div class="page-header">
+                <h1>
+                    Design responsivo
+
+                    <small>
+                        Consultas de mídia para vários dispositivos e
+                        resoluções
+                    </small>
+                </h1>
+            </div>
+
+            <!--
+              - Dispositivos suportados.
+             -->
+            <div class="row">
+                <div class="span4">
+                    <img src="assets/img/responsive-illustrations.png" alt="Responsive devices">
+                </div>
+
+                <div class="span8">
+                    <h2>
+                        Dispositivos suportados
+                    </h2>
+
+                    <p>
+                        Bootstrap oferece suporte a várias consultas de
+                        mídia em um único arquivo para ajudar a tornar
+                        seus projetos mais apropriados em diferentes
+                        dispositivos e resoluções de tela. Aqui está o
+                        que está incluído:
+                    </p>
+
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Label
+                                </th>
+
+                                <th>
+                                    Largura do layout
+                                </th>
+
+                                <th>
+                                    Largura da coluna
+                                </th>
+
+                                <th>
+                                    Largura do Gutter
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Smartphones
+                                </td>
+
+                                <td>
+                                    480px e abaixo
+                                </td>
+
+                                <td class="muted" colspan="2">
+                                    Colunas fluidas, sem larguras fixas
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Portrait tablets
+                                </td>
+
+                                <td>
+                                    480px para 768px
+                                </td>
+
+                                <td class="muted" colspan="2">
+                                    Colunas fluidas, sem larguras fixas
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Landscape tablets
+                                </td>
+
+                                <td>
+                                    768px para 979px
+                                </td>
+
+                                <td>
+                                    42px
+                                </td>
+
+                                <td>
+                                    20px
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Default
+                                </td>
+
+                                <td>
+                                    980px para cima
+                                </td>
+
+                                <td>
+                                    60px
+                                </td>
+
+                                <td>
+                                    20px
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Large display
+                                </td>
+
+                                <td>
+                                    1210px para cima
+                                </td>
+
+                                <td>
+                                    70px
+                                </td>
+
+                                <td>
+                                    30px
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>
+                        Requer meta tag
+                    </h3>
+
+                    <p>
+                        Para garantir que os dispositivos exibam páginas
+                        responsivas corretamente, inclua a meta tag da
+                        janela de visualização.
+                    </p>
+
+                    <pre class="prettyprint linenums">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre>
+
+                    <h3>
+                        O que eles fazem
+                    </h3>
+
+                    <p>
+                        As consultas de mídia permitem CSS personalizado
+                        com base em diversas condições - proporções, larguras,
+                        tipo de exibição etc. - mas geralmente se concentram em
+                        <code>min-width</code> e <code>max-width</code>.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Modifique a largura da coluna em nossa régua.
+                        </li>
+
+                        <li>
+                            Empilhe elementos em vez de flutuar sempre que
+                            necessário.
+                        </li>
+
+                        <li>
+                            Redimensione os títulos e o texto para serem
+                            mais apropriados aos dispositivos.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <br>
+
+            <!--
+              - Código de consulta de mídia.
+             -->
+            <h2>
+                Usando as consultas de mídia
+            </h2>
+
+            <div class="row">
+                <div class="span5">
+                    <p>
+                        O Bootstrap não inclui automaticamente essas consultas
+                        de mídia, mas entendê-las e adicioná-las é muito fácil
+                        e requer configuração mínima. Você tem algumas opções
+                        para incluir os recursos responsivos do Bootstrap:
+                    </p>
+
+                    <ol>
+                        <li>
+                            Use a versão responsiva compilada, bootstrap-responsive.css.
+                        </li>
+
+                        <li>
+                            Adicionar @import "responsive.less" e recompilar Bootstrap.
+                        </li>
+
+                        <li>
+                            Modifique e recompile responsive.less como um arquivo separado.
+                        </li>
+                    </ol>
+
+                    <p>
+                        <strong>
+                            Por que não apenas incluí-lo ?
+                        </strong>
+
+                        Verdade seja dita, nem tudo precisa ser responsivo.
+                        Em vez de encorajar os desenvolvedores a remover esse
+                        recurso, achamos melhor ativá-lo.
+                    </p>
+                </div>
+
+                <div class="span7">
+                    <pre class="prettyprint linenums">
+//
+// Telefones em paisagem e para baixo.
+//
+@media (max-width: 480px)
+{
+    ...
+}
+
+//
+// Telefone paisagem para tablet retrato.
+//
+@media (max-width: 768px)
+{
+    ...
+}
+
+//
+// Retrato do tablet para paisagem e desktop.
+//
+@media (min-width: 768px) and (max-width: 980px)
+{
+    ...
+}
+
+//
+// Área de trabalho grande.
+//
+@media (min-width: 1200px)
+{
+    ...
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          - Footer.
+         -->
+        <footer class="footer">
+            <p class="pull-right">
+                <a href="#">
+                    De volta ao topo
+                </a>
+            </p>
+
+            <p>
+                Projetado e construído com todo o amor do mundo
+                <a href="" rel="noopener" target="_blank">@kwrite</a> por
+                <a href="" rel="noopener" target="_blank">@bwrite</a> e
+                <a href="" rel="noopener" target="_blank">@local</a>.
+            </p>
+
+            <p>
+                Código licenciado sob o
+                <a href="#" rel="noopener" target="_blank">
+                    GNU - GENERAL PUBLIC LICENSE v3
+                </a>.
+                <br>
+
+                Documentação licenciada sob
+                <a href="#" rel="noopener" target="_blank">
+                    GNU - GENERAL PUBLIC LICENSE v3
+                </a>.
+            </p>
+
+            <p>
+                Ícones de
+                <a href="https://www.glyphicons.com/">
+                    Glyphicons Free
+                </a>,
+
+                licenciado sob
+                <a href="https://creativecommons.org/licenses/by/3.0/">
+                    CC BY 3.0
+                </a>.
+            </p>
+        </footer>
+    </div>
+
+
+    <!--
+      - Scripts - Colocado no final do documento para que as
+      -           páginas carreguem mais rápido.
+     -->
+    <script src="assets/js/jquery/jquery-1.7.1.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+
+</body>
+</html>

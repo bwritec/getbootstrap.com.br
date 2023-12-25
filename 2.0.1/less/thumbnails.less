@@ -1,0 +1,54 @@
+//
+// THUMBNAILS.
+//
+
+.thumbnails
+{
+    margin-left: -@gridGutterWidth;
+    list-style: none;
+
+    .clearfix();
+}
+
+.thumbnails > li
+{
+    margin: 0 0 @baseLineHeight @gridGutterWidth;
+    float: left;
+}
+
+.thumbnail
+{
+    border: 1px solid #ddd;
+    display: block;
+    line-height: 1;
+    padding: 4px;
+
+    .border-radius(4px);
+    .box-shadow(0 1px 1px rgba(0,0,0,.075));
+}
+
+//
+// Adicione um estado de foco somente para versões vinculadas.
+//
+a.thumbnail:hover
+{
+    border-color: @linkColor;
+
+    .box-shadow(0 1px 4px rgba(0,105,214,.25));
+}
+
+//
+// Images e captions.
+//
+.thumbnail > img
+{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.thumbnail .caption
+{
+    padding: 9px;
+}

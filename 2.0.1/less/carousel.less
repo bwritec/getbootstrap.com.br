@@ -1,0 +1,155 @@
+//
+// CAROUSEL.
+//
+
+.carousel
+{
+    margin-bottom: @baseLineHeight;
+    position: relative;
+    line-height: 1;
+}
+
+.carousel-inner
+{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel
+{
+    .item
+    {
+        position: relative;
+        display: none;
+
+        .transition(.6s ease-in-out left);
+    }
+
+    //
+    // Considere a jankitude nas imagens.
+    //
+    .item > img
+    {
+        display: block;
+        line-height: 1;
+    }
+
+    .active,
+    .next,
+    .prev
+    {
+        display: block;
+    }
+
+    .active
+    {
+        left: 0;
+    }
+
+    .next,
+    .prev
+    {
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
+
+    .next
+    {
+        left: 100%;
+    }
+
+    .prev
+    {
+        left: -100%;
+    }
+
+    .next.left,
+    .prev.right
+    {
+        left: 0;
+    }
+
+    .active.left
+    {
+        left: -100%;
+    }
+
+    .active.right
+    {
+        left: 100%;
+    }
+}
+
+//
+// Controles esquerdo/direito para nav.
+//
+
+.carousel-control
+{
+    border: 3px solid @white;
+    background: @grayDarker;
+    position: absolute;
+    text-align: center;
+    margin-top: -20px;
+    line-height: 30px;
+    font-weight: 100;
+    font-size: 60px;
+    color: @white;
+    height: 40px;
+    width: 40px;
+    left: 15px;
+    top: 40%;
+
+    .border-radius(23px);
+    .opacity(50);
+
+    //
+    // Não podemos ter essa transição aqui porque o webkit cancela
+    // a animação do carrossel se você obter isso no meio de
+    // outra animação.
+    //
+    // .transition(opacity .2s linear);
+    //
+
+    //
+    // Reposicione o caminho certo.
+    &.right
+    {
+        right: 15px;
+        left: auto;
+    }
+
+    //
+    // Status Hover.
+    //
+    &:hover
+    {
+        text-decoration: none;
+        color: @white;
+
+        .opacity(90);
+    }
+}
+
+//
+// Legenda do texto abaixo das imagens.
+//
+
+.carousel-caption
+{
+    background: @grayDark;
+    background: rgba(0,0,0,.75);
+    padding: 10px 15px 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.carousel-caption h4,
+.carousel-caption p
+{
+    color: @white;
+}

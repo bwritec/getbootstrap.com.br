@@ -1,0 +1,501 @@
+/**
+ * Bootstrap Responsive v2.0.1.
+ *
+ * Copyright (C) <ano>  Chifrudo <chifrudo@localhost.com.br>
+ *
+ * Este programa é um software livre: você pode redistribuí-lo e/ou
+ * modificá-lo sob os termos da GNU General Public License conforme
+ * publicada por a Free Software Foundation, seja a versão 3 da
+ * Licença, ou (a seu critério) qualquer versão posterior.
+ *
+ * Este programa é distribuído na esperança de que seja útil,
+ * mas SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de
+ * COMERCIABILIDADE ou ADEQUAÇÃO PARA UM FIM ESPECÍFICO. Veja a
+ * Licença Pública Geral GNU para mais detalhes.
+ *
+ * Você deve ter recebido uma cópia da GNU General Public License
+ * juntamente com este programa. Caso contrário, consulte
+ * <https://www.gnu.org/licenses/>.
+ */
+
+
+//
+// Responsive.less.
+// Para telefones e tablets.
+//
+
+//
+// REPETIR VARIÁVEIS E MIXINS.
+//
+// Obrigatório, pois compilamos o material responsivo
+// separadamente.
+//
+
+//
+// Modifique isso para cores personalizadas, tamanhos
+// de fonte, etc.
+//
+@import "variables.less";
+
+//
+//
+//
+@import "mixins.less";
+
+//
+// CLASSES RESPONSIVAS.
+//
+
+//
+// Oculte-se de leitores de tela e navegadores.
+//
+.hidden
+{
+    visibility: hidden;
+    display: none;
+}
+
+//
+// ATÉ O TELEFONE DA PAISAGEM.
+//
+
+@media (max-width: 480px)
+{
+    //
+    // Suavize a navegação em collapse/expansão.
+    //
+    .nav-collapse
+    {
+        //
+        // Ativar a GPU.
+        //
+        -webkit-transform: translate3d(0, 0, 0);
+           -moz-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+    }
+
+    //
+    // Bloqueie a pequena tag do título da página para
+    // facilitar a leitura.
+    //
+    .page-header h1 small
+    {
+        line-height: @baseLineHeight;
+        display: block;
+    }
+
+    //
+    // Fazer classes span* com largura completa.
+    //
+    input[class*="span"],
+    select[class*="span"],
+    textarea[class*="span"],
+    .uneditable-input
+    {
+        min-height: 28px;
+        display: block;
+        width: 100%;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+    //
+    // Mas não deixe que isso estrague as entradas
+    // pré-anexadas/anexadas.
+    //
+    .input-prepend input[class*="span"],
+    .input-append input[class*="span"]
+    {
+        width: auto;
+    }
+
+    //
+    // Atualizar checkboxes para iOS.
+    //
+    input[type="checkbox"],
+    input[type="radio"]
+    {
+        border: 1px solid #ccc;
+    }
+
+    //
+    // Remova os estilos de formulário horizontais.
+    //
+    .form-horizontal .control-group > label
+    {
+        text-align: left;
+        padding-top: 0;
+        width: auto;
+        float: none;
+    }
+
+    //
+    // Passe por todos os controles de entrada e conteúdo.
+    //
+    .form-horizontal .controls
+    {
+        margin-left: 0;
+    }
+
+    //
+    // Mova a lista de opções para baixo para alinhar
+    // com os rótulos.
+    //
+    .form-horizontal .control-list
+    {
+        //
+        // Tem que ser preenchido porque a margem tem collapse.
+        //
+        padding-top: 0;
+    }
+
+    //
+    // Mova os botões em .form-actions para alinhar com
+    // .controls.
+    //
+    .form-horizontal .form-actions
+    {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    //
+    // Modals.
+    //
+    .modal
+    {
+        position: absolute;
+        right: 10px;
+        width: auto;
+        left: 10px;
+        top: 10px;
+        margin: 0;
+
+        &.fade.in
+        {
+            top: auto;
+        }
+    }
+
+    .modal-header .close
+    {
+        padding: 10px;
+        margin: -10px;
+    }
+
+    //
+    // Carrossel.
+    //
+    .carousel-caption
+    {
+        position: static;
+    }
+}
+
+//
+// TELEFONE DE PAISAGEM PARA PEQUENO DESKTOP E
+// TABLET DE RETRATO.
+//
+
+@media (max-width: 767px)
+{
+    //
+    // GRID & CONTAINERS.
+    //
+    // Remova a largura dos contêineres.
+    //
+    .container
+    {
+        padding: 0 20px;
+        width: auto;
+    }
+
+    //
+    // Fluid rows.
+    //
+    .row-fluid
+    {
+        width: 100%;
+    }
+
+    //
+    // Desfazer margem negativa nas linhas.
+    //
+    .row
+    {
+        margin-left: 0;
+    }
+
+    //
+    // Torne todas as colunas iguais.
+    //
+    .row > [class*="span"],
+    .row-fluid > [class*="span"]
+    {
+        display: block;
+        width: auto;
+        float: none;
+        margin: 0;
+    }
+}
+
+//
+// TABLET DE RETRATO PARA DESKTOP PADRÃO.
+//
+
+@media (min-width: 768px) and (max-width: 979px)
+{
+    //
+    // Régua fixa.
+    //
+    #gridSystem > .generate(12, 42px, 20px);
+
+    //
+    // Régua fluida.
+    //
+    #fluidGridSystem > .generate(12, 5.801104972%, 2.762430939%);
+
+    //
+    // Régua de entrada.
+    //
+    #inputGridSystem > .generate(12, 42px, 20px);
+}
+
+//
+// TABLETS E ABAIXO.
+//
+@media (max-width: 979px)
+{
+    //
+    // DESFIXAR O TOPBAR.
+    //
+    // Remova qualquer preenchimento do body.
+    //
+    body
+    {
+        padding-top: 0;
+    }
+
+    //
+    // Desfixe o navbar.
+    //
+    .navbar-fixed-top
+    {
+        margin-bottom: @baseLineHeight;
+        position: static;
+    }
+
+    .navbar-fixed-top .navbar-inner
+    {
+        padding: 5px;
+    }
+
+    .navbar .container
+    {
+        width: auto;
+        padding: 0;
+    }
+
+    //
+    // Conta para o nome da marca.
+    //
+    .navbar .brand
+    {
+        padding-right: 10px;
+        margin: 0 0 0 -5px;
+        padding-left: 10px;
+    }
+
+    //
+    // Nav collapse clears brand.
+    //
+    .navbar .nav-collapse
+    {
+        clear: left;
+    }
+
+    //
+    // Nível de bloco da navegação.
+    //
+    .navbar .nav
+    {
+        margin: 0 0 (@baseLineHeight / 2);
+        float: none;
+    }
+
+    .navbar .nav > li
+    {
+        float: none;
+    }
+
+    .navbar .nav > li > a
+    {
+        margin-bottom: 2px;
+    }
+
+    .navbar .nav > .divider-vertical
+    {
+        display: none;
+    }
+
+    .navbar .nav .nav-header
+    {
+        color: @navbarText;
+        text-shadow: none;
+    }
+
+    //
+    // Links nav e dropdown em navbar.
+    //
+    .navbar .nav > li > a,
+    .navbar .dropdown-menu a
+    {
+        color: @navbarLinkColor;
+        font-weight: bold;
+        padding: 6px 15px;
+
+        .border-radius(3px);
+    }
+
+    .navbar .dropdown-menu li + li a
+    {
+        margin-bottom: 2px;
+    }
+
+    .navbar .nav > li > a:hover,
+    .navbar .dropdown-menu a:hover
+    {
+        background-color: @navbarBackground;
+    }
+
+    //
+    // Dropdowns no navbar.
+    //
+    .navbar .dropdown-menu
+    {
+        background-color: transparent;
+        position: static;
+        max-width: none;
+        margin: 0 15px;
+        display: block;
+        border: none;
+        float: none;
+        padding: 0;
+        left: auto;
+        top: auto;
+
+        .border-radius(0);
+        .box-shadow(none);
+    }
+
+    .navbar .dropdown-menu:before,
+    .navbar .dropdown-menu:after
+    {
+        display: none;
+    }
+
+    .navbar .dropdown-menu .divider
+    {
+        display: none;
+    }
+
+    //
+    // Forms na navbar.
+    //
+    .navbar-form,
+    .navbar-search
+    {
+        border-bottom: 1px solid @navbarBackground;
+        border-top: 1px solid @navbarBackground;
+        padding: (@baseLineHeight / 2) 15px;
+        margin: (@baseLineHeight / 2) 0;
+        float: none;
+
+        @shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+        .box-shadow(@shadow);
+    }
+
+    //
+    // Puxe para a direita, conteúdo de navegação (secundário).
+    //
+    .navbar .nav.pull-right
+    {
+        margin-left: 0;
+        float: none;
+    }
+
+    //
+    // Navbar estática.
+    //
+    .navbar-static .navbar-inner
+    {
+        padding-left:  10px;
+        padding-right: 10px;
+    }
+
+    //
+    // Botão da navbar.
+    //
+    .btn-navbar
+    {
+        display: block;
+    }
+
+    //
+    // Oculte tudo na navbar, salve .brand e botão de alternância.
+    //
+    .nav-collapse
+    {
+        overflow: hidden;
+        height: 0;
+    }
+}
+
+//
+// PADRÃO DESKTOP.
+//
+
+@media (min-width: 980px)
+{
+    .nav-collapse.collapse
+    {
+        height: auto !important;
+    }
+}
+
+//
+// LARGE DESKTOP E MAIS.
+//
+
+@media (min-width: 1200px)
+{
+    //
+    // Régua fixa.
+    //
+    #gridSystem > .generate(12, 70px, 30px);
+
+    //
+    // Régua fluida.
+    //
+    #fluidGridSystem > .generate(12, 5.982905983%, 2.564102564%);
+
+    //
+    // Régua de entrada.
+    //
+    #inputGridSystem > .generate(12, 70px, 30px);
+
+    //
+    // Thumbnails.
+    //
+    .thumbnails
+    {
+        margin-left: -30px;
+    }
+
+    .thumbnails > li
+    {
+        margin-left: 30px;
+    }
+}

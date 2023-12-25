@@ -1,0 +1,325 @@
+//
+// Typography.less.
+// Títulos, texto do body, listas, código e muito mais para
+// um sistema tipográfico versátil e durável.
+//
+
+//
+// BODY DO TEXTO.
+//
+
+p
+{
+    margin: 0 0 @baseLineHeight / 2;
+    font-family: @baseFontFamily;
+    line-height: @baseLineHeight;
+    font-size: @baseFontSize;
+
+    small
+    {
+        font-size: @baseFontSize - 2;
+        color: @grayLight;
+    }
+}
+
+.lead
+{
+    line-height: @baseLineHeight * 1.5;
+    margin-bottom: @baseLineHeight;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+//
+// TÍTULOS.
+//
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    text-rendering: optimizelegibility;
+    font-weight: bold;
+    color: @grayDark;
+    margin: 0;
+
+    small
+    {
+        font-weight: normal;
+        color: @grayLight;
+    }
+}
+
+h1
+{
+    line-height: @baseLineHeight * 2;
+    font-size: 30px;
+
+    small
+    {
+        font-size: 18px;
+    }
+}
+
+h2
+{
+    line-height: @baseLineHeight * 2;
+    font-size: 24px;
+
+    small
+    {
+        font-size: 18px;
+    }
+}
+
+h3
+{
+    line-height: @baseLineHeight * 1.5;
+    font-size: 18px;
+
+    small
+    {
+        font-size: 14px;
+    }
+}
+
+h4,
+h5,
+h6
+{
+    line-height: @baseLineHeight;
+}
+
+h4
+{
+    font-size: 14px;
+
+    small
+    {
+        font-size: 12px;
+    }
+}
+
+h5
+{
+    font-size: 12px;
+}
+
+h6
+{
+    text-transform: uppercase;
+    color: @grayLight;
+    font-size: 11px;
+}
+
+//
+// Page header.
+//
+.page-header
+{
+    border-bottom: 1px solid @grayLighter;
+    padding-bottom: @baseLineHeight - 1;
+    margin: @baseLineHeight 0;
+}
+
+.page-header h1
+{
+    line-height: 1;
+}
+
+//
+// LISTS.
+//
+
+//
+// Listas não ordenadas e ordenadas.
+//
+ul,
+ol
+{
+    margin: 0 0 @baseLineHeight / 2 25px;
+    padding: 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul
+{
+    margin-bottom: 0;
+}
+
+ul
+{
+    list-style: disc;
+}
+
+ol
+{
+    list-style: decimal;
+}
+
+li
+{
+    line-height: @baseLineHeight;
+}
+
+ul.unstyled,
+ol.unstyled
+{
+    list-style: none;
+    margin-left: 0;
+}
+
+//
+// Descrição Listas.
+//
+dl
+{
+    margin-bottom: @baseLineHeight;
+}
+
+dt,
+dd
+{
+    line-height: @baseLineHeight;
+}
+
+dt
+{
+    font-weight: bold;
+}
+
+dd
+{
+    margin-left: @baseLineHeight / 2;
+}
+
+//
+// MISC.
+//
+
+//
+// Regras horizontais.
+//
+hr
+{
+    border: 0;
+    border-top: 1px solid @hrBorder;
+    border-bottom: 1px solid @white;
+    margin: @baseLineHeight 0;
+}
+
+//
+// Ênfase.
+//
+strong
+{
+    font-weight: bold;
+}
+
+em
+{
+    font-style: italic;
+}
+
+.muted
+{
+    color: @grayLight;
+}
+
+//
+// Abreviações e Acrônimos.
+//
+abbr
+{
+    border-bottom: 1px dotted #ddd;
+    text-transform: uppercase;
+    font-size: 90%;
+    cursor: help;
+}
+
+//
+// Blockquotes.
+//
+blockquote
+{
+    border-left: 5px solid @grayLighter;
+    margin: 0 0 @baseLineHeight;
+    padding: 0 0 0 15px;
+
+    p
+    {
+        margin-bottom: 0;
+
+        #font > .shorthand(16px,300,@baseLineHeight * 1.25);
+    }
+
+    small
+    {
+        line-height: @baseLineHeight;
+        color: @grayLight;
+        display: block;
+
+        &:before
+        {
+            content: '\2014 \00A0';
+        }
+    }
+
+    //
+    // Float right with text-align: right.
+    //
+    &.pull-right
+    {
+        border-right: 5px solid @grayLighter;
+        padding-right: 15px;
+        padding-left: 0;
+        border-left: 0;
+        float: right;
+
+        p,
+        small
+        {
+            text-align: right;
+        }
+    }
+}
+
+//
+// Quotes.
+//
+q:before,
+q:after,
+blockquote:before, 
+blockquote:after
+{
+    content: "";
+}
+
+//
+// Endereços.
+//
+address
+{
+    margin-bottom: @baseLineHeight;
+    line-height: @baseLineHeight;
+    font-style: normal;
+    display: block;
+}
+
+//
+// Misc.
+//
+small
+{
+    font-size: 100%;
+}
+
+cite
+{
+    font-style: normal;
+}

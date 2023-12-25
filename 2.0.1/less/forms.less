@@ -1,0 +1,744 @@
+//
+// Forms.less.
+// Estilos básicos para vários tipos de entrada, layouts
+// de formulário e estados.
+//
+
+//
+// ESTILOS GERAIS.
+//
+
+//
+// Faça com que todos os formulários tenham espaço abaixo deles.
+//
+form
+{
+    margin: 0 0 @baseLineHeight;
+}
+
+fieldset
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+//
+// Grupos de campos com rótulos no topo (legendas).
+//
+legend
+{
+    border: 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: @baseLineHeight * 1.5;
+    line-height: @baseLineHeight * 2;
+    font-size: @baseFontSize * 1.5;
+    color: @grayDark;
+    display: block;
+    width: 100%;
+    padding: 0;
+
+    //
+    // Pequeno.
+    //
+    small
+    {
+        font-size: @baseLineHeight * .75;
+        color: @grayLight;
+    }
+}
+
+//
+// Defina a fonte dos formulários.
+//
+label,
+input,
+button,
+select,
+textarea
+{
+    //
+    // Defina tamanho, peso e altura da linha aqui.
+    //
+    #font > .shorthand(@baseFontSize,normal,@baseLineHeight);
+}
+
+input,
+button,
+select,
+textarea
+{
+    //
+    // E defina font-family aqui apenas para aqueles que
+    // precisam (observe o elemento de rótulo ausente).
+    //
+    #font > #family > .sans-serif();
+}
+
+//
+// Identifique os controles por seus rótulos.
+//
+label
+{
+    margin-bottom: 5px;
+    color: @grayDark;
+    display: block;
+}
+
+//
+// Inputs, Textareas, Selects.
+//
+input,
+textarea,
+select,
+.uneditable-input
+{
+    line-height: @baseLineHeight;
+    font-size: @baseFontSize;
+    height: @baseLineHeight;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-bottom: 9px;
+    color: @gray;
+    padding: 4px;
+    width: 210px;
+
+    .border-radius(3px);
+}
+
+.uneditable-textarea
+{
+    height: auto;
+    width: auto;
+}
+
+//
+// Entradas dentro de um rótulo.
+//
+label input,
+label textarea,
+label select
+{
+    display: block;
+}
+
+//
+// Mini redefinição para tipos de entrada exclusivos.
+//
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"]
+{
+    line-height: normal;
+    cursor: pointer;
+    margin: 3px 0;
+    height: auto;
+    width: auto;
+    padding: 0;
+    border: 0;
+
+    .border-radius(0);
+}
+
+input[type="image"]
+{
+    border: 0;
+}
+
+//
+// Redefina a entrada do arquivo para os padrões
+// do navegador.
+//
+input[type="file"]
+{
+    background-color: @white;
+    background-color: initial;
+    line-height: initial;
+    padding: initial;
+    border: initial;
+    width: auto;
+
+    .box-shadow(none);
+}
+
+//
+// Ajude os botões de entrada.
+//
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+{
+    height: auto;
+    width: auto;
+}
+
+//
+// Defina a altura dos controles de seleção e arquivo para
+// corresponder às entradas de texto.
+//
+select,
+input[type="file"]
+{
+    line-height: 28px;
+    height: 28px;
+}
+
+//
+// Redefina a altura da linha para o IE.
+//
+input[type="file"]
+{
+    line-height: 18px \9;
+}
+
+//
+// O Chrome no Linux e o Safari Mobile precisam
+// de cor de fundo.
+//
+select
+{
+    background-color: @white;
+    width: 220px;
+}
+
+//
+// Faça com que a altura de vários elementos selecionados
+// não seja fixa.
+//
+select[multiple],
+select[size]
+{
+    height: auto;
+}
+
+//
+// Remova a sombra das entradas de imagem.
+//
+input[type="image"]
+{
+    .box-shadow(none);
+}
+
+//
+// Faça com que a altura da textarea se comporte.
+//
+textarea
+{
+    height: auto;
+}
+
+//
+// Entradas ocultas.
+//
+input[type="hidden"]
+{
+    display: none;
+}
+
+//
+// CHECKBOXES & RADIOS.
+//
+
+//
+// Recue os rótulos para posicionar os radios/checkboxes
+// pendurados.
+//
+.radio,
+.checkbox
+{
+    padding-left: 18px;
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"]
+{
+    margin-left: -18px;
+    float: left;
+}
+
+//
+// Mova a lista de opções para baixo para alinhar
+// com os rótulos.
+//
+.controls > .radio:first-child,
+.controls > .checkbox:first-child
+{
+    //
+    // Tem que ser preenchido porque a margem colapsa.
+    //
+    padding-top: 5px;
+}
+
+//
+// Radios e checkboxes na mesma linha.
+// Questão: converter .inline em .control-inline.
+//
+.radio.inline,
+.checkbox.inline
+{
+    vertical-align: middle;
+    display: inline-block;
+    padding-top: 5px;
+    margin-bottom: 0;
+}
+
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline
+{
+    //
+    // Espaçar controles inline consecutivos.
+    //
+    margin-left: 10px;
+}
+
+//
+// FOCUS STATE.
+//
+
+input,
+textarea
+{
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+
+    @transition: border linear .2s, box-shadow linear .2s;
+    .transition(@transition);
+}
+
+input:focus,
+textarea:focus
+{
+    border-color: rgba(82,168,236,.8);
+
+    @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+    .box-shadow(@shadow);
+
+    outline: 0;
+    outline: thin dotted;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+select:focus
+{
+    .box-shadow(none);
+    .tab-focus();
+}
+
+//
+// INPUT SIZES.
+//
+
+//
+// Classes gerais para tamanhos rápidos.
+//
+
+.input-mini
+{
+    width: 60px;
+}
+
+.input-small
+{
+    width: 90px;
+}
+
+.input-medium
+{
+    width: 150px;
+}
+
+.input-large
+{
+    width: 210px;
+}
+
+.input-xlarge
+{
+    width: 270px;
+}
+
+.input-xxlarge
+{
+    width: 530px;
+}
+
+//
+// Tamanhos de entrada em estilo de régua.
+//
+input[class*="span"],
+select[class*="span"],
+textarea[class*="span"],
+.uneditable-input
+{
+    margin-left: 0;
+    float: none;
+}
+
+//
+// DIMENSIONAMENTO DE RÉGUA PARA ENTRADAS
+//
+
+#inputGridSystem > .generate(@gridColumns, @gridColumnWidth, @gridGutterWidth);
+
+//
+// STATUS DISABLED.
+//
+
+//
+// Entradas desabilitadas e somente leitura.
+//
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly]
+{
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+//
+// ESTADOS DE FEEDBACK DE CAMPO DO FORMULÁRIO.
+//
+
+//
+// Aviso.
+//
+.control-group.warning
+{
+    .formFieldState(@warningText, @warningText, @warningBackground);
+}
+
+//
+// Erro.
+//
+.control-group.error
+{
+    .formFieldState(@errorText, @errorText, @errorBackground);
+}
+
+//
+// Sucesso.
+//
+.control-group.success
+{
+    .formFieldState(@successText, @successText, @successBackground);
+}
+
+//
+// Estados inválidos do HTML5.
+// Compartilha estilos com o .control-group.error acima.
+//
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid
+{
+    border-color: #ee5f5b;
+    color: #b94a48;
+
+    &:focus
+    {
+        border-color: darken(#ee5f5b, 10%);
+
+        .box-shadow(0 0 6px lighten(#ee5f5b, 20%));
+    }
+}
+
+//
+// FORM ACTIONS.
+//
+
+.form-actions
+{
+    padding: (@baseLineHeight - 1) 20px @baseLineHeight;
+    margin-bottom: @baseLineHeight;
+    margin-top: @baseLineHeight;
+    border-top: 1px solid #ddd;
+    background-color: #f5f5f5;
+}
+
+//
+// Para texto que precisa aparecer como entrada,
+// mas não deveria ser uma entrada.
+//
+.uneditable-input
+{
+    display: block;
+    background-color: @white;
+    border-color: #eee;
+    cursor: not-allowed;
+
+    .box-shadow(inset 0 1px 2px rgba(0, 0, 0, .025));
+}
+
+//
+// O texto do espaço reservado recebe estilos especiais;
+// não podem ser agrupados por algum motivo.
+//
+.placeholder(@grayLight);
+
+//
+// HELP TEXT.
+//
+
+.help-block
+{
+    color: @grayLight;
+    margin-bottom: 0;
+    margin-top: 5px;
+    display: block;
+}
+
+.help-inline
+{
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 9px;
+    padding-left: 5px;
+}
+
+//
+// INPUT GROUPS.
+//
+
+//
+// Permita-nos colocar símbolos e texto no campo de entrada
+// para uma aparência mais limpa.
+//
+.input-prepend,
+.input-append
+{
+    margin-bottom: 5px;
+
+    //
+    // Limpe o flutuador para evitar wrapping.
+    //
+    .clearfix();
+
+    input,
+    .uneditable-input
+    {
+        .border-radius(0 3px 3px 0);
+
+        &:focus
+        {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    .uneditable-input
+    {
+        border-left-color: #ccc;
+    }
+
+    .add-on
+    {
+        line-height: @baseLineHeight;
+        text-shadow: 0 1px 0 @white;
+        background-color: #f5f5f5;
+        height: @baseLineHeight;
+        border: 1px solid #ccc;
+        font-weight: normal;
+        text-align: center;
+        margin-right: -1px;
+        color: @grayLight;
+        padding: 4px 5px;
+        min-width: 16px;
+        display: block;
+        width: auto;
+        float: left;
+
+        .border-radius(3px 0 0 3px);
+    }
+
+    .active
+    {
+        background-color: lighten(@green, 30);
+        border-color: @green;
+    }
+}
+
+.input-prepend
+{
+    .add-on
+    {
+    }
+}
+
+.input-append
+{
+    input,
+    .uneditable-input
+    {
+        float: left;
+
+        .border-radius(3px 0 0 3px);
+    }
+
+    .uneditable-input
+    {
+        border-right-color: #ccc;
+        border-left-color: #eee;
+    }
+
+    .add-on
+    {
+        margin-left: -1px;
+        margin-right: 0;
+
+        .border-radius(0 3px 3px 0);
+    }
+
+    input:first-child
+    {
+        &+.add-on
+        {
+        }
+    }
+}
+
+//
+// FORMULÁRIO DE BUSCA.
+//
+
+.search-query
+{
+    padding-right: 14px;
+    padding-left: 14px;
+    margin-bottom: 0;
+
+    .border-radius(14px);
+}
+
+//
+// FORMS HORIZONTAL E VERTICAL.
+//
+
+//
+// Propriedades comuns.
+//
+
+.form-search,
+.form-inline,
+.form-horizontal
+{
+    input,
+    textarea,
+    select,
+    .help-inline,
+    .uneditable-input
+    {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+
+    //
+    // Oculte novamente os elementos ocultos devido à
+    // especificidade.
+    //
+    .hide
+    {
+        display: none;
+    }
+}
+
+.form-search label,
+.form-inline label,
+.form-search .input-append,
+.form-inline .input-append,
+.form-search .input-prepend,
+.form-inline .input-prepend
+{
+    display: inline-block;
+}
+
+//
+// Faça o acréscimo e acrescente o complemento vertical-align: middle;
+//
+.form-search .input-append .add-on,
+.form-inline .input-prepend .add-on,
+.form-search .input-append .add-on,
+.form-inline .input-prepend .add-on
+{
+    vertical-align: middle;
+}
+
+//
+// Labels de checkbox/radio inline.
+//
+.form-search .radio,
+.form-inline .radio,
+.form-search .checkbox,
+.form-inline .checkbox
+{
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+//
+// Margem para espaçar conjuntos de campos.
+//
+.control-group
+{
+    margin-bottom: @baseLineHeight / 2;
+}
+
+//
+// A legenda reduz a margem, então o próximo elemento é
+// responsável pelo espaçamento.
+//
+legend + .control-group
+{
+    margin-top: @baseLineHeight;
+
+    -webkit-margin-top-collapse: separate;
+}
+
+//
+// Estilos específicos horizontais.
+//
+
+.form-horizontal
+{
+    //
+    // Aumente o espaçamento entre os grupos.
+    //
+    .control-group
+    {
+        margin-bottom: @baseLineHeight;
+
+        .clearfix();
+    }
+
+    //
+    // Flutue os rótulos para a esquerda.
+    //
+    .control-label
+    {
+        text-align: right;
+        padding-top: 5px;
+        width: 140px;
+        float: left;
+    }
+
+    //
+    // Passe por todos os controles de entrada
+    // e conteúdo.
+    //
+    .controls
+    {
+        margin-left: 160px;
+    }
+
+    //
+    // Mova os botões em .form-actions para alinhar com .controls.
+    //
+    .form-actions
+    {
+        padding-left: 160px;
+    }
+}

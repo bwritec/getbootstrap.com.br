@@ -1,0 +1,251 @@
+//
+// Tables.less.
+// Tabelas para, você adivinhou, dados tabulares.
+//
+
+//
+// BASE TABLES.
+//
+
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100%;
+}
+
+//
+// ESTILOS DE BASE.
+//
+
+.table
+{
+    margin-bottom: @baseLineHeight;
+    width: 100%;
+
+    th,
+    td
+    {
+        line-height: @baseLineHeight;
+        border-top: 1px solid #ddd;
+        vertical-align: top;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th
+    {
+        font-weight: bold;
+    }
+
+    //
+    // Alinhamento inferior para títulos de colunas.
+    //
+    thead th
+    {
+        vertical-align: bottom;
+    }
+
+    //
+    // Remova a borda mais alta do título por padrão.
+    //
+    thead:first-child tr th,
+    thead:first-child tr td
+    {
+        border-top: 0;
+    }
+
+    //
+    // Conta para múltiplas instâncias tbody.
+    //
+    tbody + tbody
+    {
+        border-top: 2px solid #ddd;
+    }
+}
+
+//
+// CONDENSED TABLE W/ HALF PADDING.
+//
+
+.table-condensed
+{
+    th,
+    td
+    {
+        padding: 4px 5px;
+    }
+}
+
+//
+// VERSÃO BORDADA.
+//
+
+.table-bordered
+{
+    border-collapse: separate;
+    border: 1px solid #ddd;
+
+    .border-radius(4px);
+
+    th + th,
+    td + td,
+    th + td,
+    td + th
+    {
+        border-left: 1px solid #ddd;
+    }
+
+    //
+    // Evite uma borda dupla.
+    //
+    thead:first-child tr:first-child th,
+    tbody:first-child tr:first-child th,
+    tbody:first-child tr:first-child td
+    {
+        border-top: 0;
+    }
+
+    //
+    // Para o primeiro th ou td na primeira linha do primeiro
+    // thead ou tbody.
+    //
+    thead:first-child tr:first-child th:first-child,
+    tbody:first-child tr:first-child td:first-child
+    {
+        .border-radius(4px 0 0 0);
+    }
+
+    thead:first-child tr:first-child th:last-child,
+    tbody:first-child tr:first-child td:last-child
+    {
+        .border-radius(0 4px 0 0);
+    }
+
+    //
+    // Para o primeiro th ou td na primeira linha do primeiro
+    // thead ou tbody.
+    //
+    thead:last-child tr:last-child th:first-child,
+    tbody:last-child tr:last-child td:first-child
+    {
+        .border-radius(0 0 0 4px);
+    }
+
+    thead:last-child tr:last-child th:last-child,
+    tbody:last-child tr:last-child td:last-child
+    {
+        .border-radius(0 0 4px 0);
+    }
+}
+
+//
+// ZEBRA-STRIPING.
+//
+
+//
+// Estilos padrão de listras de zebra (alternando fundos
+// cinza e transparentes).
+//
+.table-striped
+{
+    tbody
+    {
+        tr:nth-child(odd) td,
+        tr:nth-child(odd) th
+        {
+            background-color: #f9f9f9;
+        }
+    }
+}
+
+//
+// EFEITO HOVER.
+//
+// Colocado aqui porque deve vir depois da possível faixa de zebra.
+//
+.table
+{
+    tbody tr:hover td,
+    tbody tr:hover th
+    {
+        background-color: #f5f5f5;
+    }
+}
+
+//
+// TAMANHO DE CÉLULAS DE TABELA.
+//
+
+//
+// Mude as colunas.
+//
+.tableColumns(@columnSpan: 1)
+{
+    width: ((@gridColumnWidth) * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1)) - 16;
+    margin-left: 0;
+    float: none;
+}
+
+table
+{
+    .span1
+    {
+        .tableColumns(1);
+    }
+
+    .span2
+    {
+        .tableColumns(2);
+    }
+
+    .span3
+    {
+        .tableColumns(3);
+    }
+
+    .span4
+    {
+        .tableColumns(4);
+    }
+
+    .span5
+    {
+        .tableColumns(5);
+    }
+
+    .span6
+    {
+        .tableColumns(6);
+    }
+
+    .span7
+    {
+        .tableColumns(7);
+    }
+
+    .span8
+    {
+        .tableColumns(8);
+    }
+
+    .span9
+    {
+        .tableColumns(9);
+    }
+
+    .span10
+    {
+        .tableColumns(10);
+    }
+
+    .span11
+    {
+        .tableColumns(11);
+    }
+
+    .span12
+    {
+        .tableColumns(12);
+    }
+}

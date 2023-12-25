@@ -1,0 +1,167 @@
+//
+// DROPDOWN MENUS.
+//
+
+//
+// Use a classe .menu em qualquer elemento <li> na barra
+// mais alta ou ul.tabs e você obterá alguns menus dropdowns
+// super sofisticados.
+//
+.dropdown
+{
+    position: relative;
+}
+
+.dropdown-toggle
+{
+}
+
+.dropdown-toggle:active,
+.open .dropdown-toggle
+{
+    outline: 0;
+}
+
+//
+// Dropdown arrow/caret.
+//
+.caret
+{
+    border-left:  4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top:   4px solid @black;
+    display: inline-block;
+    text-indent: -99999px;
+    vertical-align: top;
+    content: "\2193";
+    height: 0;
+    width: 0;
+
+    .opacity(30);
+}
+
+.dropdown .caret
+{
+    margin-left: 2px;
+    margin-top: 8px;
+}
+
+.dropdown:hover .caret,
+.open.dropdown .caret
+{
+    .opacity(100);
+}
+
+//
+// O menu dropdown (ul).
+//
+.dropdown-menu
+{
+    background-color: @white;
+    z-index: @zindexDropdown;
+    position: absolute;
+    min-width: 160px;
+    list-style: none;
+    padding: 4px 0;
+    display: none;
+    float: left;
+    width: auto;
+    margin: 0;
+    top: 100%;
+    left: 0;
+
+    border-color: #ccc;
+    border-color: rgba(0,0,0,.2);
+    border-style: solid;
+    border-width: 1px;
+
+    .border-radius(0 0 5px 5px);
+    .box-shadow(0 5px 10px rgba(0,0,0,.2));
+
+    -webkit-background-clip: padding-box;
+       -moz-background-clip: padding-box;
+            background-clip: padding-box;
+
+    //
+    // Permitir que os menus dropdowns vão de baixo para
+    // cima (também conhecido como dropup-menu).
+    //
+    &.bottom-up
+    {
+        margin-bottom: 2px;
+        bottom: 100%;
+        top: auto;
+    }
+
+    //
+    // Divisores (basicamente uma hora) no menu dropdown.
+    //
+    .divider
+    {
+        border-bottom: 1px solid @white;
+        background-color: #e5e5e5;
+        overflow: hidden;
+        margin: 5px 1px;
+        height: 1px;
+    }
+
+    //
+    // Links no menu dropdown.
+    //
+    a
+    {
+        line-height: @baseLineHeight;
+        white-space: nowrap;
+        font-weight: normal;
+        padding: 3px 15px;
+        display: block;
+        color: @gray;
+        clear: both;
+    }
+}
+
+//
+// Status Hover.
+//
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover
+{
+    background-color: @linkColor;
+    text-decoration: none;
+    color: @white;
+}
+
+//
+// Estado aberto para o menu dropdown.
+//
+.dropdown.open
+{
+    .dropdown-toggle
+    {
+        background: #ccc;
+        background: rgba(0,0,0,.3);
+        color: @white;
+    }
+
+    .dropdown-menu
+    {
+        display: block;
+    }
+}
+
+//
+// Typeahead.
+//
+.typeahead
+{
+    //
+    // Dê-lhe algum espaço para obter.
+    //
+    margin-top: 2px;
+
+    //
+    //
+    //
+    .border-radius(4px);
+}

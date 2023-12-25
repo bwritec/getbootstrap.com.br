@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <!--
+      - Copyright (C) <ano>  Chifrudo <chifrudo@localhost.com.br>
+      -
+      - Este programa é um software livre: você pode redistribuí-lo e/ou
+      - modificá-lo sob os termos da GNU General Public License conforme
+      - publicada por a Free Software Foundation, seja a versão 3 da
+      - Licença, ou (a seu critério) qualquer versão posterior.
+      -
+      - Este programa é distribuído na esperança de que seja útil,
+      - mas SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de
+      - COMERCIABILIDADE ou ADEQUAÇÃO PARA UM FIM ESPECÍFICO. Veja a
+      - Licença Pública Geral GNU para mais detalhes.
+      -
+      - Você deve ter recebido uma cópia da GNU General Public License
+      - juntamente com este programa. Caso contrário, consulte
+      - <https://www.gnu.org/licenses/>.
+     -->
+
+    <!--
+      - Charset.
+     -->
+    <meta charset="utf-8">
+
+    <!--
+      - Viewport.
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+      - Favicon.
+     -->
+    <link rel="icon" href="assets/ico/favicon.ico" type="image/x-icon">
+
+    <!--
+      - Título.
+     -->
+    <title>Bootstrap</title>
+
+    <!--
+      - HTML5 shim, para suporte IE6-8 de elementos HTML.
+     -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv-3.7.3.js"></script>
+    <![endif]-->
+
+    <!--
+      - Estilos.
+     -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/docs.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/google-code-prettify/prettify.css">
+
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+    <!--
+      - Navbar.
+     -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <a class="brand" href="./index.html">
+                    Bootstrap
+                </a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="">
+                            <a href="./index.html">
+                                Visão geral
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./scaffolding.html">
+                                Scaffolding
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./base-css.html">
+                                CSS básico
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./components.html">
+                                Componentes
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./javascript.html">
+                                Plugins Javascript
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="./less.html">
+                                Usando LESS
+                            </a>
+                        </li>
+
+                        <li class="divider-vertical"></li>
+
+                        <li class="">
+                            <a href="./download.html">
+                                Customizar
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="./examples.html">
+                                Exemplos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!--
+          - Masthead.
+         -->
+        <header class="jumbotron subhead" id="overview">
+            <h1>
+                Usando LESS com Bootstrap
+            </h1>
+
+            <p class="lead">
+                Personalize e estenda o Bootstrap com
+                <a href="http://lesscss.org/" rel="noopener" target="_blank">LESS</a>,
+                um pré-processador CSS, para aproveitar as vantagens das
+                variáveis, mixins e muito mais usados para construir o
+                CSS do Bootstrap.
+            </p>
+
+            <div class="subnav">
+                <ul class="nav nav-pills">
+                    <li>
+                        <a href="#builtWith">
+                            Construído com Less
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#variables">
+                            Variáveis
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#mixins">
+                            Mixins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#compiling">
+                            Compilando Bootstrap
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!--
+          - CONSTRUÍDO COM LESS.
+         -->
+        <section id="builtWith">
+            <div class="page-header">
+                <h1>
+                    Construído com LESS
+                </h1>
+            </div>
+
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        Por que LESS ?
+                    </h3>
+
+                    <p>
+                        Bootstrap é feito com LESS em sua essência, uma
+                        linguagem de folha de estilo dinâmica, Isso torna
+                        o desenvolvimento de CSS baseado em sistemas mais
+                        rápido, fácil e divertido.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        O que está incluído ?
+                    </h3>
+
+                    <p>
+                        Como uma extensão do CSS, LESS inclui variáveis,
+                        mixins para trechos de código reutilizáveis,
+                        operações para matemática simples, aninhamento
+                        e até funções de cores.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Saber mais
+                    </h3>
+
+                    <img style="float: right; height: 36px;" src="assets/img/less-logo-large.png" alt="LESS CSS">
+
+                    <p>
+                        Visite o site oficial em
+                        <a href="http://lesscss.org/">http://lesscss.org/</a>
+                        para saber mais.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        <a href="#variables">
+                            Variáveis
+                        </a>
+                    </h3>
+
+                    <p>
+                        Gerenciar cores e valores de pixel em CSS pode ser
+                        um pouco trabalhoso, geralmente cheio de copiar e
+                        colar. Porém, não com LESS - atribua cores ou
+                        valores de pixel como variáveis e altere-os
+                        uma vez.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        <a href="#mixins">
+                            Mixins
+                        </a>
+                    </h3>
+
+                    <p>
+                        Essas três declarações de border-radius que você
+                        precisa fazer no velho CSS normal ? Agora eles
+                        estão reduzidos a uma linha com a ajuda de mixins,
+                        trechos de código que você pode reutilizar em
+                        qualquer lugar.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Operações
+                    </h3>
+
+                    <p>
+                        Torne sua régua, líder e mais flexível, fazendo as
+                        contas dinamicamente com as operações. Multiplique,
+                        divida, adicione e subtraia para obter a sanidade
+                        do CSS.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          - VARIÁVEIS.
+         -->
+        <section id="variables">
+            <div class="page-header">
+                <h1>
+                    Variáveis Bootstrap
+
+                    <small>
+                        Variáveis LESS, seus valores e diretrizes de uso
+                    </small>
+                </h1>
+            </div>
+
+            <div class="row">
+                <div class="span6">
+                    <h3>
+                        Hyperlinks
+                    </h3>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span2">
+                                    <code>@linkColor</code>
+                                </td>
+
+                                <td>
+                                    #08c
+                                </td>
+
+                                <td>
+                                    Cor padrão do texto do link
+                                </td>
+
+                                <td class="swatch-col">
+                                    <span class="swatch" style="background-color: #08c;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@linkColorHover</code>
+                                </td>
+
+                                <td>
+                                    <code>darken(@linkColor, 15%)</code>
+                                </td>
+
+                                <td>
+                                    Cor de foco do texto do link padrão
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #005580;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>
+                        Sistema de régua
+                    </h3>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span2">
+                                    <code>@gridColumns</code>
+                                </td>
+
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@gridColumnWidth</code>
+                                </td>
+
+                                <td>
+                                    60px
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@gridGutterWidth</code>
+                                </td>
+
+                                <td>
+                                    20px
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@fluidGridColumnWidth</code>
+                                </td>
+
+                                <td>
+                                    6.382978723%
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@fluidGridGutterWidth</code>
+                                </td>
+
+                                <td>
+                                    2.127659574%
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>
+                        Tipografia
+                    </h3>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span2">
+                                    <code>@baseFontSize</code>
+                                </td>
+
+                                <td>
+                                    13px
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@baseFontFamily</code>
+                                </td>
+
+                                <td>
+                                    <code>"Helvetica Neue", Helvetica, Arial, sans-serif</code>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@baseLineHeight</code>
+                                </td>
+
+                                <td>
+                                    18px
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="span6">
+                    <h3>
+                        Cores em tons de cinza
+                    </h3>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span2">
+                                    <code>@black</code>
+                                </td>
+
+                                <td>
+                                    #000
+                                </td>
+
+                                <td class="swatch-col">
+                                    <span class="swatch" style="background-color: #000;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@grayDarker</code>
+                                </td>
+
+                                <td>
+                                    #222
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #222;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@grayDark</code>
+                                </td>
+
+                                <td>
+                                    #333
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #333;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@gray</code>
+                                </td>
+
+                                <td>
+                                    #555
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #555;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@grayLight</code>
+                                </td>
+
+                                <td>
+                                    #999
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #999;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@grayLighter</code>
+                                </td>
+
+                                <td>
+                                    #eee
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #eee;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@white</code>
+                                </td>
+
+                                <td>
+                                    #fff
+                                </td>
+
+                                <td>
+                                    <span class="swatch swatch-bordered" style="background-color: #fff;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>
+                        Cores de destaque
+                    </h3>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span2">
+                                    <code>@blue</code>
+                                </td>
+
+                                <td>
+                                    #049cdb
+                                </td>
+
+                                <td class="swatch-col">
+                                    <span class="swatch" style="background-color: #049cdb;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@green</code>
+                                </td>
+
+                                <td>
+                                    #46a546
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #46a546;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@red</code>
+                                </td>
+
+                                <td>
+                                    #9d261d
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #9d261d;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@yellow</code>
+                                </td>
+
+                                <td>
+                                    #ffc40d
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #ffc40d;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@orange</code>
+                                </td>
+
+                                <td>
+                                    #f89406
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #f89406;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@pink</code>
+                                </td>
+
+                                <td>
+                                    #c3325f
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #c3325f;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@purple</code>
+                                </td>
+
+                                <td>
+                                    #7a43b6
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #7a43b6;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3>
+                Componentes
+            </h3>
+
+            <div class="row">
+                <div class="span6">
+                    <h4>
+                        Botões
+                    </h4>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span3">
+                                    <code>@primaryButtonBackground</code>
+                                </td>
+
+                                <td>
+                                    <code>@linkColor</code>
+                                </td>
+
+                                <td class="swatch-col">
+                                    <span class="swatch" style="background-color: #08c;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>
+                        Formulários
+                    </h4>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span3">
+                                    <code>@placeholderText</code>
+                                </td>
+
+                                <td>
+                                    <code>@grayLight</code>
+                                </td>
+
+                                <td class="swatch-col">
+                                    <span class="swatch" style="background-color: #999;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>
+                        Navbar
+                    </h4>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span3">
+                                    <code>@navbarHeight</code>
+                                </td>
+
+                                <td>
+                                    40px
+                                </td>
+
+                                <td class="swatch-col">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@navbarBackground</code>
+                                </td>
+
+                                <td>
+                                    <code>@grayDarker</code>
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #222;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@navbarBackgroundHighlight</code>
+                                </td>
+
+                                <td>
+                                    <code>@grayDark</code>
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #333;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@navbarText</code>
+                                </td>
+
+                                <td>
+                                    <code>@grayLight</code>
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #999;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@navbarLinkColor</code>
+                                </td>
+
+                                <td>
+                                    <code>@grayLight</code>
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #999;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@navbarLinkColorHover</code>
+                                </td>
+
+                                <td>
+                                    <code>@white</code>
+                                </td>
+
+                                <td>
+                                    <span class="swatch swatch-bordered" style="background-color: #fff;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="span6">
+                    <h4>
+                        Estados e alertas do formulário
+                    </h4>
+
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="span3">
+                                    <code>@warningText</code>
+                                </td>
+
+                                <td>
+                                    #c09853
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #c09853;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@warningBackground</code>
+                                </td>
+
+                                <td>
+                                    #f3edd2
+                                </td>
+
+                                <td class="swatch-col">
+                                    <span class="swatch" style="background-color: #f3edd2;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@errorText</code>
+                                </td>
+
+                                <td>
+                                    #b94a48
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #b94a48;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@errorBackground</code>
+                                </td>
+
+                                <td>
+                                    #f2dede
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #f2dede;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@successText</code>
+                                </td>
+
+                                <td>
+                                    #468847
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #468847;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@successBackground</code>
+                                </td>
+
+                                <td>
+                                    #dff0d8
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #dff0d8;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@infoText</code>
+                                </td>
+
+                                <td>
+                                    #3a87ad
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #3a87ad;"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>@infoBackground</code>
+                                </td>
+
+                                <td>
+                                    #d9edf7
+                                </td>
+
+                                <td>
+                                    <span class="swatch" style="background-color: #d9edf7;"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          - MIXINS.
+         -->
+        <section id="mixins">
+            <div class="page-header">
+                <h1>
+                    Bootstrap mixins
+
+                    <small>
+                    </small>
+                </h1>
+            </div>
+
+            <h2>
+                Sobre mixins
+            </h2>
+
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        Mixins básicos
+                    </h3>
+
+                    <p>
+                        Um mixin básico é essencialmente uma inclusão ou
+                        parcial de um trecho de CSS. Eles são escritos
+                        como uma classe CSS e podem ser chamados em
+                        qualquer lugar.
+                    </p>
+
+                    <pre class="prettyprint linenums">
+.element
+{
+    .clearfix();
+}</pre>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Mixins paramétricos
+                    </h3>
+
+                    <p>
+                        Um mixin paramétrico é como um mixin básico, mas
+                        também aceita parâmetros (daí o nome) com valores
+                        padrão opcionais.
+                    </p>
+
+                    <pre class="prettyprint linenums">
+.element
+{
+    .border-radius(4px);
+}</pre>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Adicione facilmente o seu próprio
+                    </h3>
+
+                    <p>
+                        Quase todos os mixins do Bootstrap são armazenados
+                        em mixins.less, um maravilhoso arquivo utilitário
+                        .less que permite usar um mixin em qualquer um dos
+                        arquivos .less do kit de ferramentas.
+                    </p>
+
+                    <p>
+                        Então, vá em frente e use os existentes ou fique
+                        à vontade para adicionar os seus conforme necessário.
+                    </p>
+                </div>
+            </div>
+
+            <h2>
+                Mixins incluídos
+            </h2>
+
+            <h3>
+                Utilitários
+            </h3>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="span4">
+                            Mixin
+                        </th>
+
+                        <th>
+                            Parâmetros
+                        </th>
+
+                        <th>
+                            Uso
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>.clearfix()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Adicione a qualquer camada mais alta para
+                            limpar os floats.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.tab-focus()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Aplique o estilo de foco do Webkit e arredondar
+                            o contorno do Firefox
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.center-block()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Centralize automaticamente um elemento em nível
+                            de bloco usando <code>margin: auto</code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.ie7-inline-block()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Use além do normal <code>display: inline-block</code>
+                            para obter suporte ao IE7
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.size()</code>
+                        </td>
+
+                        <td>
+                            <code>@height: 5px, @width: 5px</code>
+                        </td>
+
+                        <td>
+                            Defina rapidamente a altura e a largura em uma linha
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.square()</code>
+                        </td>
+
+                        <td>
+                            <code>@size: 5px</code>
+                        </td>
+
+                        <td>
+                            Constrói <code>.size()</code> para definir a
+                            largura e a altura como o mesmo valor
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.opacity()</code>
+                        </td>
+
+                        <td>
+                            <code>@opacity: 100</code>
+                        </td>
+
+                        <td>
+                            Defina, em números inteiros, a porcentagem de
+                            opacidade (por exemplo, “50” ou “75”)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>
+                Formulários
+            </h3>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="span4">
+                            Mixin
+                        </th>
+
+                        <th>
+                            Parâmetros
+                        </th>
+
+                        <th>
+                            Uso
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>.placeholder()</code>
+                        </td>
+
+                        <td>
+                            <code>@color: @placeholderText</code>
+                        </td>
+
+                        <td>
+                            Definir as cores de texto do <code>placeholder</code>
+                            para entradas
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>
+                Tipografia
+            </h3>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="span4">
+                            Mixin
+                        </th>
+
+                        <th>
+                            Parâmetros
+                        </th>
+
+                        <th>
+                            Uso
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>#font > #family > .serif()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Faça um elemento usar uma pilha de fontes serifadas
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>#font > #family > .sans-serif()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Faça um elemento usar uma pilha de fontes sem serifa
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>#font > #family > .monospace()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Faça um elemento usar uma pilha de fontes
+                            monoespaçadas
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>#font > .shorthand()</code>
+                        </td>
+
+                        <td>
+                            <code>@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight</code>
+                        </td>
+
+                        <td>
+                            Defina facilmente o tamanho, a espessura e o
+                            entrelinhamento da fonte
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>#font > .serif()</code>
+                        </td>
+
+                        <td>
+                            <code>@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight</code>
+                        </td>
+
+                        <td>
+                            Defina a família de fontes como serifada e controle
+                            o tamanho, a espessura e o entrelinhamento
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>#font > .sans-serif()</code>
+                        </td>
+
+                        <td>
+                            <code>@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight</code>
+                        </td>
+
+                        <td>
+                            Defina a família de fontes como sem serifa e
+                            controle o tamanho, a espessura e o entrelinhamento
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>#font > .monospace()</code>
+                        </td>
+
+                        <td>
+                            <code>@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight</code>
+                        </td>
+
+                        <td>
+                            Defina a família de fontes como monoespaçada e
+                            controle o tamanho, a espessura e o entrelinhamento
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>
+                Sistema de régua
+            </h3>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="span4">
+                            Mixin
+                        </th>
+
+                        <th>
+                            Parâmetros
+                        </th>
+
+                        <th>
+                            Uso
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>.container-fixed()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Forneça uma largura fixa (definida com
+                            <code>@siteWidth</code>) container para armazenar
+                            seu conteúdo
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.columns()</code>
+                        </td>
+
+                        <td>
+                            <code>@columns: 1</code>
+                        </td>
+
+                        <td>
+                            Crie uma coluna de régua que abranja qualquer
+                            número de colunas (o padrão é 1 coluna)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.offset()</code>
+                        </td>
+
+                        <td>
+                            <code>@columns: 1</code>
+                        </td>
+
+                        <td>
+                            Desloque uma coluna da régua com margem esquerda
+                            que abranja qualquer número de colunas
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.gridColumn()</code>
+                        </td>
+
+                        <td>
+                            <em class="muted">none</em>
+                        </td>
+
+                        <td>
+                            Faça um elemento flutuar como uma coluna de régua
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>
+                Propriedades CSS3
+            </h3>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="span3">
+                            Mixin
+                        </th>
+
+                        <th>
+                            Parâmetros
+                        </th>
+
+                        <th>
+                            Uso
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>.border-radius()</code>
+                        </td>
+
+                        <td>
+                            <code>@radius: 5px</code>
+                        </td>
+
+                        <td>
+                            Arredonde os cantos de um elemento. Pode ser um
+                            único valor ou quatro valores separados por espaço
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.box-shadow()</code>
+                        </td>
+
+                        <td>
+                            <code>@shadow: 0 1px 3px rgba(0,0,0,.25)</code>
+                        </td>
+
+                        <td>
+                            Adicionar uma sombra projetada a um elemento
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.transition()</code>
+                        </td>
+
+                        <td>
+                            <code>@transition</code>
+                        </td>
+
+                        <td>
+                            Adicione efeito de transição CSS3 (por exemplo,
+                            <code>all .2s linear</code>)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.rotate()</code>
+                        </td>
+
+                        <td>
+                            <code>@degrees</code>
+                        </td>
+
+                        <td>
+                            Girar um elemento <em>n</em> graus
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.scale()</code>
+                        </td>
+
+                        <td>
+                            <code>@ratio</code>
+                        </td>
+
+                        <td>
+                            Dimensionar um elemento para <em>n</em> vezes
+                            o seu tamanho original
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.translate()</code>
+                        </td>
+
+                        <td>
+                            <code>@x: 0, @y: 0</code>
+                        </td>
+
+                        <td>
+                            Mova um elemento nos planos x e y
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.background-clip()</code>
+                        </td>
+
+                        <td>
+                            <code>@clip</code>
+                        </td>
+
+                        <td>
+                            Cortar o fundo de um elemento (útil para
+                            <code>border-radius</code>)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.background-size()</code>
+                        </td>
+
+                        <td>
+                            <code>@size</code>
+                        </td>
+
+                        <td>
+                            Controle o tamanho das imagens de fundo via CSS3
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.box-sizing()</code>
+                        </td>
+
+                        <td>
+                            <code>@boxmodel</code>
+                        </td>
+
+                        <td>
+                            Alterar o modelo de caixa de um elemento (por
+                            exemplo, <code>border-box</code> para largura
+                            total <code>input</code>)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.user-select()</code>
+                        </td>
+
+                        <td>
+                            <code>@select</code>
+                        </td>
+
+                        <td>
+                            Controlar a seleção do cursor do texto em uma página
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.resizable()</code>
+                        </td>
+
+                        <td>
+                            <code>@direction: both</code>
+                        </td>
+
+                        <td>
+                            Torne qualquer elemento redimensionável à direita
+                            e na parte inferior
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.content-columns()</code>
+                        </td>
+
+                        <td>
+                            <code>@columnCount, @columnGap: @gridColumnGutter</code>
+                        </td>
+
+                        <td>
+                            Faça com que o conteúdo de qualquer elemento use
+                            colunas CSS3
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>
+                Backgrounds e gradientes
+            </h3>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="span4">
+                            Mixin
+                        </th>
+
+                        <th>
+                            Parâmetros
+                        </th>
+
+                        <th>
+                            Uso
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>.#translucent > .background()</code>
+                        </td>
+
+                        <td>
+                            <code>@color: @white, @alpha: 1</code>
+                        </td>
+
+                        <td>
+                            Dê a um elemento uma cor de fundo translúcida
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.#translucent > .border()</code>
+                        </td>
+
+                        <td>
+                            <code>@color: @white, @alpha: 1</code>
+                        </td>
+
+                        <td>
+                            Dê a um elemento uma cor de borda translúcida
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.#gradient > .vertical()</code>
+                        </td>
+
+                        <td>
+                            <code>@startColor, @endColor</code>
+                        </td>
+
+                        <td>
+                            Crie um gradiente de fundo vertical entre
+                            navegadores
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.#gradient > .horizontal()</code>
+                        </td>
+
+                        <td>
+                            <code>@startColor, @endColor</code>
+                        </td>
+
+                        <td>
+                            Crie um gradiente de fundo horizontal entre
+                            navegadores
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.#gradient > .directional()</code>
+                        </td>
+
+                        <td>
+                            <code>@startColor, @endColor, @deg</code>
+                        </td>
+
+                        <td>
+                            Crie um gradiente de fundo direcional entre
+                            navegadores
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.#gradient > .vertical-three-colors()</code>
+                        </td>
+
+                        <td>
+                            <code>@startColor, @midColor, @colorStop, @endColor</code>
+                        </td>
+
+                        <td>
+                            Crie um gradiente de fundo de três cores para
+                            vários navegadores
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.#gradient > .radial()</code>
+                        </td>
+
+                        <td>
+                            <code>@innerColor, @outerColor</code>
+                        </td>
+
+                        <td>
+                            Crie um gradiente de fundo radial entre navegadores
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.#gradient > .striped()</code>
+                        </td>
+
+                        <td>
+                            <code>@color, @angle</code>
+                        </td>
+
+                        <td>
+                            Crie um gradiente de fundo listrado entre
+                            navegadores
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>.#gradientBar()</code>
+                        </td>
+
+                        <td>
+                            <code>@primaryColor, @secondaryColor</code>
+                        </td>
+
+                        <td>
+                            Usado para botões para atribuir um gradiente e uma
+                            borda um pouco mais escura
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!--
+          - COMPILANDO LESS E BOOTSTRAP.
+         -->
+        <section id="compiling">
+            <div class="page-header">
+                <h1>
+                    Compilando Bootstrap com LESS
+                </h1>
+            </div>
+
+            <div class="alert alert-info">
+                <strong>
+                    Observação:
+                </strong>
+
+                Se estiver enviando uma solicitação pull ao Git com
+                CSS modificado, você <strong>deve</strong> recompilar
+                o CSS por meio de qualquer um desses métodos.
+            </div>
+
+            <h2>
+                Ferramentas para compilar
+            </h2>
+
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        Node com makefile
+                    </h3>
+
+                    <p>
+                        Instale o compilador de linha de comando LESS
+                        globalmente com npm executando o seguinte comando:
+                    </p>
+
+                    <pre>$ npm install -g less</pre>
+
+                    <p>
+                        Depois de instalado basta executar <code>make</code>
+                        da raiz do seu diretório de inicialização e está tudo
+                        pronto.
+                    </p>
+
+                    <p>
+                        Além disso, se você tiver
+                        <a href="https://github.com/mynyml/watchr">watchr</a>
+                        instalado, você pode executar <code>make watch</code>
+                        para que o bootstrap seja reconstruído automaticamente
+                        toda vez que você editar um arquivo na biblioteca de
+                        bootstrap (isso não é necessário, apenas um método
+                        conveniente).
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Linha de comando
+                    </h3>
+
+                    <p>
+                        Instale a ferramenta de linha de comando LESS via
+                        Node e execute o seguinte comando:
+                    </p>
+
+                    <pre>$ lessc ./lib/bootstrap.less > bootstrap.css</pre>
+
+                    <p>
+                        Certifique-se de incluir <code>--compress</code>
+                        nesse comando se você estiver tentando salvar alguns
+                        bytes !
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <h3>
+                        Javascript
+                    </h3>
+
+                    <p>
+                        <a href="http://lesscss.org/">
+                            Baixar o Less.js mais recente
+                        </a>
+
+                        e inclua o caminho para ele (e Bootstrap) no
+                        <code>&lt;head&gt;</code>.
+                    </p>
+
+                    <pre class="prettyprint">
+&lt;link rel="stylesheet/less" href="/path/to/bootstrap.less"&gt;
+&lt;script src="/path/to/less.js"&gt;&lt;/script&gt;</pre>
+
+                    <p>
+                        Para recompilar os arquivos .less, basta salvá-los
+                        e recarregar sua página. Less.js os compila e os
+                        armazena no armazenamento local.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          - Footer.
+         -->
+        <footer class="footer">
+            <p class="pull-right">
+                <a href="#">
+                    De volta ao topo
+                </a>
+            </p>
+
+            <p>
+                Projetado e construído com todo o amor do mundo
+                <a href="" rel="noopener" target="_blank">@kwrite</a> por
+                <a href="" rel="noopener" target="_blank">@bwrite</a> e
+                <a href="" rel="noopener" target="_blank">@local</a>.
+            </p>
+
+            <p>
+                Código licenciado sob o
+                <a href="#" rel="noopener" target="_blank">
+                    GNU - GENERAL PUBLIC LICENSE v3
+                </a>.
+                <br>
+
+                Documentação licenciada sob
+                <a href="#" rel="noopener" target="_blank">
+                    GNU - GENERAL PUBLIC LICENSE v3
+                </a>.
+            </p>
+
+            <p>
+                Ícones de
+                <a href="https://www.glyphicons.com/">
+                    Glyphicons Free
+                </a>,
+
+                licenciado sob
+                <a href="https://creativecommons.org/licenses/by/3.0/">
+                    CC BY 3.0
+                </a>.
+            </p>
+        </footer>
+    </div>
+
+
+    <!--
+      - Scripts - Colocado no final do documento para que as
+      -           páginas carreguem mais rápido.
+     -->
+    <script type="text/javascript" src="assets/js/jquery/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-scrollspy.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-tooltip.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-button.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-carousel.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
+
+</body>
+</html>
